@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/shop', function () {
-    return view('shop');
+    return view('shop.shop');
 })->middleware(['auth', 'verified'])->name('shop');
 
 Route::middleware('auth')->group(function () {
