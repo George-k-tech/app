@@ -1,8 +1,13 @@
 <x-app-layout>
     <div>
-        <form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data" >
-            @csrf
+        <div>
             <h1>Create Product</h1>
+        </div>
+        <div>
+            <a href="{{route('product.index')}}"> View Products</a>
+        </div>
+        <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div>
                 <label for="image">Image</label>
                 <input type="file" name="image" placeholder="product Image">
