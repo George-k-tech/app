@@ -15,6 +15,11 @@
                     <x-nav-link :href="route('shop')" :active="request()->routeIs('shop')">
                         {{ __('Shop ') }}
                     </x-nav-link>
+                    @role('admin')
+                    <x-nav-link :href=" route('product.index')" >
+                        {{ __('Products ') }}
+                    </x-nav-link>
+                    @endrole
                 </div>
             </div>
            
