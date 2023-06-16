@@ -20,7 +20,7 @@
                 <tr>
                     <th>{{$key + 1 }}</th>
                     <td>
-                        <img src="  {{$item->image}}" alt="Product Image" style="width:10%">
+                        <img src="{{$item->image}}" alt="Product Image" style="width:10%">
                       </td>
                     <td>{{$item->name}}</td>
                     <td>{{$item->description}}</td>
