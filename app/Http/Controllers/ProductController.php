@@ -30,22 +30,26 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'name' => 'required',
+            'description' =>'required',
+            'price' =>'required',
+            'image' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
       $filename = '';
-
       if($request->hasFile('image')){
-
         $filename = $request ->getSchemeAndHttpHost() . '/assets/image/' . time() . '.' . $request->image->extension();
-
         $request->image->move(public_path('/assets/image/'), $filename);
-
       }
 
-      $products = Product::create([
-        'image' => $filename,
-        'name' => $request->name,
-        'description'=> $request->description,
-        'price' =>$request->price,
-      ]);
+      $products = new Product;
+      $products->image = $filename;
+      $products->name = $request->name;
+      $products->description = $request->description;
+      $products->price = $request->price;
+      $products->save();
       return redirect()->back();
     }
 
