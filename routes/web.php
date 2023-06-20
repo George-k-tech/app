@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,11 +20,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/shop', function () {
-    return view('shop.shop');
-})->middleware(['auth', 'verified'])->name('shop');
+
+
+Route::resource('/shop', ShopController::class)->middleware(['auth', 'verified']);
 
 Route::resource('/product', ProductController::class)->middleware(['auth', 'verified', 'role:admin']);
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
