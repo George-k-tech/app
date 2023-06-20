@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -30,22 +31,27 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'name' => 'required',
+            'description' =>'required',
+            'price' =>'required',
+            'image' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
       $filename = '';
-
       if($request->hasFile('image')){
-
         $filename = $request ->getSchemeAndHttpHost() . '/assets/image/' . time() . '.' . $request->image->extension();
-
         $request->image->move(public_path('/assets/image/'), $filename);
-
       }
-
-      $products = Product::create([
-        'image' => $filename,
-        'name' => $request->name,
-        'description'=> $request->description,
-        'price' =>$request->price,
-      ]);
+      $slug = Str::slug($request->name, '-');
+      $products = new Product;
+      $products->image = $filename;
+      $products->name = $request->name;
+      $products->description = $request->description;
+      $products->price = $request->price;
+      $products->slug = $slug;
+      $products->save();
       return redirect()->back();
     }
 

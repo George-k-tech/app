@@ -11,6 +11,7 @@
             <div>
                 <label for="image">Image</label>
                 <input type="file" name="image" placeholder="product Image">
+                
             </div>
 
             <div>
