@@ -68,7 +68,8 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $product = Product::find($id);
+        return view('product.edit', compact('product'));
     }
 
     /**
@@ -76,7 +77,27 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'description' =>'required',
+            'price' =>'required',
+            'image' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+      $filename = '';
+      if($request->hasFile('image')){
+        $filename = $request ->getSchemeAndHttpHost() . '/assets/image/' . time() . '.' . $request->image->extension();
+        $request->image->move(public_path('/assets/image/'), $filename);
+      }
+      $slug = Str::slug($request->name, '-');
+      $product = Product::find($id);
+      $product->image = $filename;
+      $product->name = $request->name;
+      $product->description = $request->description;
+      $product->price = $request->price;
+      $product->slug = $slug;
+      $product->update();
+      return redirect()->back();
     }
 
     /**

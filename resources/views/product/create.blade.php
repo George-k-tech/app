@@ -1,7 +1,7 @@
 <x-app-layout>
     <div>
         <div>
-            <h1>Create Product</h1>
+            <h1>Create Product Page</h1>
         </div>
         <div>
             <a href="{{route('product.index')}}"> View Products</a>

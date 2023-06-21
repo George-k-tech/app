@@ -13,4 +13,12 @@ class ShopController extends Controller
         $products = Product::all();
         return view('shop.index', compact('products'));
     }
+
+    
+    public function show(string $slug)
+    {
+        $product = Product::where('slug',$slug)->first();
+
+        return  view('shop.show', compact('product'));
+    }
 }
