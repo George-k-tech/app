@@ -27,7 +27,13 @@
                         <td>{{ $item->description }}</td>
                         <td>{{ $item->price }}</td>
                         <td><a href="{{url('product/'.$item->id)}}"> Edit</a> </td>
-                        <td><a href="{{url('product'.$item->id)}}"> Delete</a> </td>
+                        <td>
+                        <form action="{{route('product.destroy',$item->id) }}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
