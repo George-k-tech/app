@@ -6,7 +6,7 @@
         <div>
             <a href="{{ route('product.index') }}"> View Products</a>
         </div>
-        <form action="{{url('product/'.$product->id)}}" method="POST">
+        <form action="{{url('product/'.$product->id)}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div>
                 <label for="image">Image</label>

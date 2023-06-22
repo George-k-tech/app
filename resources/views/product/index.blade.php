@@ -27,7 +27,7 @@
                         <td>{{ $item->description }}</td>
                         <td>{{ $item->price }}</td>
                         <td><a href="{{url('product/'.$item->id)}}"> Edit</a> </td>
-                        <td><a href="{{ url('product/' . $item->id) }}"> Delete</a> </td>
+                        <td><a href="{{url('product'.$item->id)}}"> Delete</a> </td>
                     </tr>
                 @endforeach
             </tbody>
