@@ -16,17 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-
-
-
-Route::middleware(['auth', 'verified']) ->group(function (){
-    Route::get('/shop',[ShopController::class, 'index'])->name('shop.index');
-    Route::get('/shop/{slug}', [ShopController::class, 'show'])->name('shop.show');
-    });
+Route::get('/', [ShopController::class, 'index'])->name('shop.index');
+Route::get('/{slug}', [ShopController::class, 'show'])->name('shop.show');
 
 /* Route::resource('/shop', ShopController::class)->middleware(['auth', 'verified']); */
 
