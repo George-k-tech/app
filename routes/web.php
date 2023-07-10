@@ -24,6 +24,10 @@ Route::get('/shop/{slug}', [ShopController::class, 'show'])->name('shop.show');
 
 Route::resource('/product', ProductController::class)->middleware(['auth', 'verified', 'role:admin']);
 
+Route::middleware('auth', 'verified')->group(function(){
+
+});
+
 
 
 Route::middleware('auth')->group(function () {
