@@ -3,7 +3,7 @@
     <ul>
         <li><a href="{{route('shop.index')}}"> Shop</a></li>
         <li><a href="{{route('product.index')}}"> products</a></li>
-        <li><a href="#"> to be known</a></li>
+        <li><a href="{{route('cart.index')}}">Cart<span class="cart-count">3</span></a></li>
     </ul>
     @if (Route::has('login'))
         @auth

@@ -47,7 +47,7 @@ nav ul li a {
 
 }
 
-.sub-menu-wrap.open-menu{
+.sub-menu-wrap.open-menu {
     max-height: 400px;
 }
 
@@ -112,5 +112,7 @@ nav ul li a {
 .sub-menu-link:hover p {
     font-weight: 600;
 }
+
+
 
 /* Navigation bar css end */
