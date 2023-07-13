@@ -1,11 +1,79 @@
 <x-app-layout>
-{{--     <x-slot name="header">
+    <section class="home" id="home">
+        <div class="content">
+            <h3>G-commerce offers</h3>
+            <span> affordable products</span>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione doloremque quam iusto asperiores
+                doloribus eius, maxime quos sed quidem beatae!</p>
+            <a href="#" class="btn">Shop Now </a>
+        </div>
+    </section>
+    {{--     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight flex justify-center">
             {{ __('G-commerce') }}
         </h2>
     </x-slot> --}}
+    {{-- <div class="body">
+        <div class="container">
+            <div class="header">
+                <h1>products</h1>
+            </div>
+            <div class="products">
+                @foreach ($products as $item)
+                    <div class="product">
+                        <div class="image">
+                            <img src={{ $item->image }} alt={{ $item->name }}>
+                        </div>
+                        <div class="namePrice">
+                            <h3>{{ $item->name }}</h3>
+                            <span>${{ $item->price }}</span>
+                        </div>
+                        <p>{{ $item->description }}</p>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <div class="bay">
+                            <button> buy now </button>
+                        </div>
+                    </div>
+                @endforeach
+            </div> --}}
+    {{--    <div class="body">
+        <div class="container">
+            <div class="header">
+                <h1>products</h1>
+            </div>
+            <div class="products">
+                @foreach ($products as $item)
+                    <div class="product">
+                        <div class="image">
+                            <img src={{ $item->image }} alt={{ $item->name }}>
+                        </div>
+                        <div class="namePrice">
+                            <h3>{{ $item->name }}</h3>
+                            <span>${{ $item->price }}</span>
+                        </div>
+                        <p>{{ $item->description }}</p>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <div class="bay">
+                            <button> buy now </button>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div> --}}
 
-    <div class="">
+    {{-- <div class="">
         <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 ">
             <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
               @foreach ($products as $item)
@@ -33,6 +101,6 @@
                 <!-- More products... -->
             </div>
         </div>
-    </div>
+    </div> --}}
 
 </x-app-layout>

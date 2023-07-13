@@ -1,9 +1,73 @@
-<nav>
+    <header>
+
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+
+        <a href="#" class="logo">G-commerce<span>.</span></a>
+
+        <nav class="navbar">
+            <a href="#shop">Shop</a>
+            <a href="#product">Products</a>
+            <a href="#tobe known">To be Known</a>
+            <a href="#tobe known 2">To be known 2</a>
+        </nav>
+        <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+            @if (Route::has('login'))
+                @auth
+                    <a href="#" class="fas fa-user" onclick="toggleMenu()">
+                        <div class="sub-menu-wrap" id="subMenu">
+                            <div class="sub-menu">
+                                <div class="user-info">
+                                    <h2>{{ Auth::user()->name }}</h2>
+                                </div>
+                                <hr>
+                                <a href="{{ route('profile.edit') }}" class="sub-menu-link">
+                                    <p>Edit Profile</p>
+                                    <span></span>
+                                </a>
+                                <a href="#" class="sub-menu-link">
+                                    <p>Orders</p>
+                                    <span></span>
+                                </a>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <a href="{{ route('logout') }}" class="sub-menu-link"
+                                        onclick="event.preventDefault(); this.closest('form').submit();">
+                                        <p>Logout</p>
+                                        <span></span>
+                                    </a>
+                                </form>
+                            </div>
+                        </div>
+                    </a>
+                @else
+                    <a href="{{ route('login') }}">Login</a>
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}">Register</a>
+                    @endif
+                @endauth
+            @endif
+        </div>
+
+        <script>
+            let subMenu = document.getElementById("subMenu");
+
+            function toggleMenu() {
+                subMenu.classList.toggle("open-menu");
+            }
+        </script>
+    </header>
+
+
+
+    {{-- <nav>
     <img src="" class="logo" alt="Logo" />
     <ul>
-        <li><a href="{{route('shop.index')}}"> Shop</a></li>
-        <li><a href="{{route('product.index')}}"> products</a></li>
-        <li><a href="#"> to be known</a></li>
+        <li><a href="{{ route('shop.index') }}"> Shop</a></li>
+        <li><a href="{{ route('product.index') }}"> products</a></li>
+        <li><a href="{{ route('cart.index') }}">Cart<span class="cart-count">3</span></a></li>
     </ul>
     @if (Route::has('login'))
         @auth
@@ -28,7 +92,8 @@
                     </a>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <a href="{{ route('logout') }}" class="sub-menu-link" onclick="event.preventDefault(); this.closest('form').submit();">
+                        <a href="{{ route('logout') }}" class="sub-menu-link"
+                            onclick="event.preventDefault(); this.closest('form').submit();">
                             <img src="images" alt="logout" />
                             <p>Logout</p>
                             <span></span>
@@ -54,4 +119,4 @@
     </script>
 
 </nav>
-
+ --}}
