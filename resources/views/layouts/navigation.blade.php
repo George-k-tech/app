@@ -3,17 +3,13 @@
         <input type="checkbox" name="" id="toggler">
         <label for="toggler" class="fas fa-bars"></label>
 
-        <a href="#" class="logo">G-commerce<span>.</span></a>
+        <a href="{{ route('shop.index') }}" class="logo">G-commerce<span>.</span></a>
 
         <nav class="navbar">
-            <a href="#shop">Shop</a>
-            <a href="#product">Products</a>
+            <a href="{{ route('shop.index') }}">Shop</a>
+            <a href="{{ route('product.index') }}">Products</a>
             <a href="#tobe known">To be Known</a>
             <a href="#tobe known 2">To be known 2</a>
-        </nav>
-        <div class="icons">
-            <a href="#" class="fas fa-heart"></a>
-            <a href="#" class="fas fa-shopping-cart"></a>
             @if (Route::has('login'))
                 @auth
                     <a href="#" class="fas fa-user" onclick="toggleMenu()">
@@ -49,11 +45,13 @@
                     @endif
                 @endauth
             @endif
+        </nav>
+        <div class="icons">
+            <a href="#" class="fas fa-shopping-cart"><span>1</span></a>
         </div>
 
         <script>
             let subMenu = document.getElementById("subMenu");
-
             function toggleMenu() {
                 subMenu.classList.toggle("open-menu");
             }
