@@ -1,8 +1,6 @@
 <x-app-layout>
-    <div>
-        <h1>The product Page</h1>
-    </div>
-    <div>
+    <div class="test">
+        <div><h1>Product page</h1></div>
         <a href="{{ route('product.create') }}"> Create Product</a>
 
         <table>
