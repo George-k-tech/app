@@ -1,6 +1,6 @@
 <x-app-layout>
-    <div>
-        <div>
+    <div class="test" >
+        <div class="test">
             <h1>Create Product Page</h1>
         </div>
         <div>
