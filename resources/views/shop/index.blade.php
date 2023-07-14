@@ -87,11 +87,25 @@
                 </div>
 
             @endforeach
-
         </div>
     </section>
 
-    
+    <section class="contact" id="contact">
+        <h1 class="heading"><span>contact</span>Us</h1>
+        <div class="row">
+            <form action="">
+              <input type="text" placeholder="name" class="box">
+              <input type="email" placeholder="email" class="box"> 
+              <input type="number" placeholder="number" class="box">
+              <textarea name="message" class="box" placeholder="message" id="" cols="30" rows="10"></textarea> 
+              <input type="submit" value="send message" class="btn">  
+            </form>
+
+            <div class="image">
+                <img src="/assets/shoes.jpg" alt="contactus">
+            </div>
+        </div>
+    </section>
 
     {{--     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight flex justify-center">
