@@ -47,7 +47,7 @@
             @endif
         </nav>
         <div class="icons">
-            <a href="{{route('cart.index')}}" class="fas fa-shopping-cart"><span>1</span></a>
+            <a href="{{route('cart.index')}}" class="fas fa-shopping-cart"><span>{{count((array)session('cart'))}}</span></a>
         </div>
 
         <script>

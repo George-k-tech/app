@@ -510,6 +510,29 @@ border-color: var(--white);
 
 /*  footer css ends here */
 
+/* cart css starts here */
+
+.cart .cart-title{
+    display: flex;
+    justify-content: space-between;
+}
+.cart hr{
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: blue;
+    margin: 15px 0 10px;
+}
+
+.cart .cart-item{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.cart .cart-item .product-image img{
+    max-height:70px ;
+}
+/*cart css ends here */
 
 /* create product css starts here */
 
