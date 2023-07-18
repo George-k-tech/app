@@ -31,7 +31,7 @@
                         <p>subtotal: {{ $details['price'] * $details['quantity'] }}</p>
                     </div>
                     <div class="product-action">
-                        <button class="btn">Delete</button>
+                        <button class="btn delete-product">Delete</button>
                     </div>
                 </div>
             @endforeach
@@ -45,7 +45,29 @@
         </div>
 
         <div class="">
-<a href="">checkout</a>
+            <a href="">checkout</a>
         </div>
     </section>
+
+    <script type="text/javascript">
+        $(".delete-product").click(function(e) {
+            e.preventDefault();
+
+            var ele = $(this);
+
+            if (confirm("Do you really want to delete?")) {
+                $.ajax({
+                    url: '{{ route('delete.cart.product') }}',
+                    method: "DELETE",
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        id: ele.parents("tr").attr("rowId")
+                    },
+                    success: function(response) {
+                        window.location.reload();
+                    }
+                });
+            }
+        });
+    </script>
 </x-app-layout>
