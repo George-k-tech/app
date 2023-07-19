@@ -1,5 +1,49 @@
 <x-app-layout>
-    <section class="cart" id="cart">
+
+    <table >
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @php $total = 0 @endphp
+            @if(session('cart'))
+                @foreach(session('cart') as $id => $details)
+                    <tr rowId="{{ $id }}">
+                        <td >
+                            <div >
+                                <div ><img src="{{ $details['image'] }}" /></div>
+                                <div >
+                                    <h4 >{{ $details['description'] }}</h4>
+                                </div>
+                            </div>
+                        </td>
+                        <td >${{ $details['price'] }}</td>
+                        
+                        <td ></td>
+                        <td >
+                            <a class="delete-product"><i> delete</i></a>
+                        </td>
+                    </tr>
+                @endforeach
+            @endif
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" class="text-right">
+                    <a href="{{ url('/') }}" class="btn btn-primary"><i class="fa fa-angle-left"></i> Continue Shopping</a>
+                    <button class="btn btn-danger">Checkout</button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+ {{--    <section class="cart" id="cart">
         <h1 class="heading">Cart <span>Items</span></h1>
         <div class="cart-title">
             <h1>Product</h1>
@@ -47,7 +91,7 @@
         <div class="">
             <a href="">checkout</a>
         </div>
-    </section>
+    </section> --}}
 
     <script type="text/javascript">
         $(".delete-product").click(function(e) {
