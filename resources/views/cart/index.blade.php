@@ -1,49 +1,67 @@
 <x-app-layout>
 
-    <table >
-        <thead>
-            <tr>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Total</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @php $total = 0 @endphp
-            @if(session('cart'))
-                @foreach(session('cart') as $id => $details)
-                    <tr rowId="{{ $id }}">
-                        <td >
-                            <div >
-                                <div ><img src="{{ $details['image'] }}" /></div>
-                                <div >
-                                    <h4 >{{ $details['description'] }}</h4>
-                                </div>
+    <div class="table-parent">
+        @php $total = 0 @endphp
+        @if (session('cart'))
+            <div class="table">
+                <div class="table-header">
+                    <div class="header-left">
+                        <p> Products</p>
+                    </div>
+
+                    <div class="header-right">
+                        <p>Price</p>
+                        <p>Quantity</p>
+                        <p>Subtotal</p>
+                        <div class="delete"></div>
+                    </div>
+                </div>
+                @foreach (session('cart') as $id => $details)
+                    @php $total +=$details['price'] * $details['quantity'] @endphp
+
+                    <div class="hr hr1"></div>
+                    <div class="table-body" id="{{ $id }}">
+
+                        <div class="content-left">
+                            <div class="cart-image"><img src="{{ $details['image'] }}" width="100px" height="100px" />
                             </div>
-                        </td>
-                        <td >${{ $details['price'] }}</td>
-                        
-                        <td ></td>
-                        <td >
-                            <a class="delete-product"><i> delete</i></a>
-                        </td>
-                    </tr>
+                            <div class="cart-description">
+                                <p>{{ $details['description'] }}</p>
+                            </div>
+                        </div>
+
+                        <div class="content-right">
+                            <p>${{ $details['price'] }}</p>
+                            <input class="cart-input" type="number" value="{{ $details['quantity'] }}">
+                            <p>{{ $details['price'] * $details['quantity'] }}</p>
+                            <p class="delete-product fa fa-trash"></p>
+                        </div>
+                    </div>
                 @endforeach
-            @endif
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="5" class="text-right">
-                    <a href="{{ url('/') }}" class="btn btn-primary"><i class="fa fa-angle-left"></i> Continue Shopping</a>
-                    <button class="btn btn-danger">Checkout</button>
-                </td>
-            </tr>
-        </tfoot>
-    </table>
+        @endif
+    </div>
 
+    <div class="checkout">
+        <div class="checkout-title">
+            <p>Cart Summary</p>
+        </div>
+        <div class="hr"></div>
+        <div class="total">
+            <P>Total</P>
+            <p>{{ $total }}</p>
+        </div>
+        <div class="hr"></div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, voluptatibus!</p>
+        <div class="hr"></div>
+        <div class="checkout-btn">
+            <p class="check-btn"><a href="#">checkout <span>({{ $total }})</span></a></p>
+            <p class="check-btn"><a href="{{ route('shop.index') }}"> Continue Shopping</a></p>
+        </div>
+    </div>
 
- {{--    <section class="cart" id="cart">
+    </div>
+
+    {{--   <section class="cart" id="cart">
         <h1 class="heading">Cart <span>Items</span></h1>
         <div class="cart-title">
             <h1>Product</h1>
@@ -58,10 +76,10 @@
         @if (session('cart'))
             @foreach (session('cart') as $id => $details)
                 @php $total +=$details['price'] * $details['quantity'] @endphp
-                <div class="cart-item">
+                <div class="cart-item" id={{$id}}>
                     <div class="product-image">
                         <img src="{{ $details['image'] }}" alt="the product image">
-                    </div>
+                             @php $total +=$details['price'] * $details['quantity'] @endphp       </div>
                     <div class="product-description">
                         <p>{{ $details['description'] }}</p>
                     </div>
@@ -105,7 +123,7 @@
                     method: "DELETE",
                     data: {
                         _token: '{{ csrf_token() }}',
-                        id: ele.parents("tr").attr("rowId")
+                        id: ele.parents(".table-body").attr("id")
                     },
                     success: function(response) {
                         window.location.reload();
