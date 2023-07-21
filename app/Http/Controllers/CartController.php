@@ -36,6 +36,16 @@ class CartController extends Controller
         return redirect()->back();
     }
 
+    public function updateProduct(Request $request){
+
+        if($request->id && $request->quantity){
+            $cart = session()->get('cart');
+            $cart[$request->id]["quantity"] = $request->quantity;
+            session()->put('cart', $cart);
+            session()->flash('success', 'cart successfully updated!');
+        }
+    }
+
     public function deleteProduct(Request $request){
         if($request->id) {
             $cart = session()->get('cart');
@@ -46,4 +56,5 @@ class CartController extends Controller
             session()->flash('success', 'deleted succefully');
         }
     }
+    
 }
