@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ShopController::class, 'index'])->name('shop.index');
 Route::get('/shop/{slug}', [ShopController::class, 'show'])->name('shop.show');
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::get('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add-to-cart');
+Route::delete('/delete-cart-product', [CartController::class, 'deleteProduct'])->name('delete.cart.product');
+Route::patch('/update-cart-product', [CartController::class, 'updateProduct'])->name('update.cart');
 
 /* Route::resource('/shop', ShopController::class)->middleware(['auth', 'verified']); */
 

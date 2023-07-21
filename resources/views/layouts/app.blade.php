@@ -13,7 +13,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
         <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
         @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/css/main.css'])
+        
     </head>
     <body class="font-sans antialiased">
         
