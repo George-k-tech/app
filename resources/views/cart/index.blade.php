@@ -1,7 +1,6 @@
 <x-app-layout>
 
-    <form method="" action="">
-        @csrf
+    
         <div class="table-parent">
             @php $total = 0 @endphp
             @if (session('cart'))
@@ -56,14 +55,12 @@
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, voluptatibus!</p>
             <div class="hr"></div>
             <div class="checkout-btn">
-                <p class="check-btn"><a href="#">checkout <span>({{ $total }})</span></a></p>
+                <p class="check-btn"><a href="{{route('cart.store')}}">checkout <span>({{ $total }})</span></a></p>
                 <p class="check-btn"><a href="{{ route('shop.index') }}"> Continue Shopping</a></p>
             </div>
         </div>
     
         </div>
-    
-    </form>
     
 
     <script type="text/javascript">

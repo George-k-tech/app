@@ -56,5 +56,9 @@ class CartController extends Controller
             session()->flash('success', 'deleted succefully');
         }
     }
+
+    public function storeProduct(){
+        return view('cart.hello');
+    }
     
 }
