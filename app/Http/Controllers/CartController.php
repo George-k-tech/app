@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -14,51 +15,46 @@ class CartController extends Controller
         return view('cart.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function addToCart($id)
     {
-        //
+        $product = Product::findOrFail($id);
+
+        $cart = session()->get('cart', []);
+
+        if (isset($cart[$id])) {
+            $cart[$id]['quantity']++;
+        } else {
+            $cart[$id] = [
+                "image" => $product->image,
+                "description" =>$product->description,
+                "price"=>$product->price,
+                "quantity" => 1,
+            ];
+        }
+
+        session()->put('cart', $cart);
+        return redirect()->back();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+    public function updateProduct(Request $request){
+
+        if($request->id && $request->quantity){
+            $cart = session()->get('cart');
+            $cart[$request->id]["quantity"] = $request->quantity;
+            session()->put('cart', $cart);
+            session()->flash('success', 'cart successfully updated!');
+        }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+    public function deleteProduct(Request $request){
+        if($request->id) {
+            $cart = session()->get('cart');
+            if(isset($cart[$request->id])) {
+                unset($cart[$request->id]);
+                session()->put('cart', $cart);
+            }
+            session()->flash('success', 'deleted succefully');
+        }
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-       
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+    
 }
