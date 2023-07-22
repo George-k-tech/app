@@ -33,6 +33,7 @@ class CartController extends Controller
         }
 
         session()->put('cart', $cart);
+
         return redirect()->back();
     }
 
@@ -55,6 +56,12 @@ class CartController extends Controller
             }
             session()->flash('success', 'deleted succefully');
         }
+    }
+
+    public function storeProduct(){
+        $cart = session()->get('cart');
+
+        dd($cart);
     }
     
 }
