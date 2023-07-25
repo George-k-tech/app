@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -59,9 +60,16 @@ class CartController extends Controller
     }
 
     public function storeProduct(){
-        $cart = session()->get('cart');
+        $items = session()->get('cart');
 
-        dd($cart);
+        foreach ($items as $item){
+            $item['user_id'] = auth()->id();
+            $order = Order::create($item);
+            /* $order->user->name; */
+        }
+       
+        return redirect()->back();
+
     }
     
 }
