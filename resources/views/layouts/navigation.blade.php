@@ -12,7 +12,7 @@
             <a href="#tobe known 2">To be known 2</a>
             @if (Route::has('login'))
                 @auth
-                    <a href="#" class="fas fa-user" onclick="toggleMenu()">
+                    <a href="#" class="fas fa-user" onclick="toggleMenu()"></a>
                         <div class="sub-menu-wrap" id="subMenu">
                             <div class="sub-menu">
                                 <div class="user-info">
@@ -37,7 +37,6 @@
                                 </form>
                             </div>
                         </div>
-                    </a>
                 @else
                     <a href="{{ route('login') }}">Login</a>
                     @if (Route::has('register'))
