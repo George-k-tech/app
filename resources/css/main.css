@@ -22,6 +22,188 @@ html {
     overflow-x: hidden;
 }
 
+
+/* css for the slider */
+.new-container{
+    background: linear-gradient(180deg,#345aa4 -28.35%,rgba(63,0,156,0)153.96% ); 
+    width:100%;
+    height:70vh;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.carousel{
+    
+    width:100%;
+    height:100%;
+    border-radius: 3px;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+
+}
+.slider{
+    color:white;
+    font-family:'DM Sans',sans-serif ;
+    display: flex;
+    height:100%;
+    width: 500%;
+    flex-shrink: 0;
+    transition: all 0.5s;
+}
+.slider section{
+    flex-basis: 20%;
+    width: 20%;
+    flex-shrink: 0;
+    flex: 1;
+    display: flex;
+    
+    
+}
+.arrow{
+    
+    cursor: pointer;
+}
+
+.controls{
+    width:100%;
+    height: 100%;
+    top: 50%;
+    position:absolute;
+    display: flex;
+    justify-content: space-between;
+}
+.sliders{
+    padding: 0  50px 0 50px;
+    width:90%;
+    display:flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    
+    
+}
+.slider-img{
+    /* mix-blend-mode: color-burn; */
+  width:100%;
+  height: 100%;
+   object-fit:contain;
+   
+}
+.slider-image{
+    mix-blend-mode: color-burn;
+    width:400px;
+    height:400px;
+    display: flex;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+    
+ 
+}
+.slider-showcase{
+    width:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+
+}
+.slider-info p{
+    
+    font-weight:500;
+    font-size:25px;
+    padding:1em 0;
+}
+.slider-info h1{
+    font-weight:700;
+    font-size: clamp(40px, 5vw, 50px);
+    line-height: 1; 
+}
+.slider-info{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+}
+ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+h1,p{
+    margin:0;
+}
+.row{
+    display: flex;
+}
+
+.shop-btn{
+    font-size: 16px;
+    font-weight:bold;
+    margin-top: 50px;
+    width:150px;
+    padding: 15px 30px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgb(64, 104, 168);
+}
+@media screen and (max-width: 1110px){
+    .slider-showcase{
+        width:100%;
+        height: 40%;
+    }
+    .sliders{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+
+    }
+    .slider-image{
+        width:300px;
+        height:300px;
+    }
+    .container{
+        height: 100vh;
+    }
+    .slider-info{
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+@media screen and (max-width: 780px){
+    .slider-info{
+        width:100%;
+        height: 40%;
+     
+        
+    
+
+
+    }
+    
+    .sliders{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+
+    }
+    
+   
+}
+
+/* css for the slider */
+
 /* css for the navbar header */
 header {
     position: fixed;
@@ -164,9 +346,9 @@ header .fa-bars {
 
 
 /*section css starts here */
-section {
+/* section {
     padding: 2rem 9%;
-}
+} */
 
 .btn {
     display: inline-block;
