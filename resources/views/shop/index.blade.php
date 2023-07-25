@@ -1,5 +1,122 @@
 <x-app-layout>
-    <section class="home" id="home">
+
+
+    <div class="new-container">
+        <div class="carousel">
+            <div class="slider">
+                <section>
+                    <div class="sliders slider1">
+                        <div class="slider-info">
+                           <div class="info-top">
+                            <h1>Come shop with us</h1>
+                            <p>hurry up and get the best offers now!</p>
+                           </div>
+                           <div class="buttonarea">
+                            <div class="shop-btn">shop</div>
+                           </div>
+                        </div>
+                        <div class="slider-showcase">
+                            <div class="slider-image">
+                                <img src="assets/shoes.jpg" alt="" class="slider-img">
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </section>
+                <section>
+                    <div class="sliders slider2">
+                        <div class="slider-info">
+                            <div class="info-top">
+                                <h1>Come shop with us</h1>
+                                <p>hurry up and get the best offers now!</p>
+                               </div>
+                               <div class="buttonarea">
+                                <div class="shop-btn">shop</div>
+                               </div>
+                        </div>
+                        <div class="slider-showcase">
+                            <div class="slider-image">
+                                <img src="images/gaming_pc.png" alt="" class="slider-img">
+                            </div>
+
+                        </div>
+                       
+                    </div>
+                </section>
+                <section>
+                    <div class="sliders slider2">
+                        <div class="slider-info">
+                            <div class="info-top">
+                                <h1>Come shop with us</h1>
+                                <p>hurry up and get the best offers now!</p>
+                            </div>
+                            <div class="buttonarea">
+                                <div class="shop-btn">shop</div>
+                               </div>
+                        </div>
+                        <div class="slider-showcase">
+                            <div class="slider-image">
+                                <img src="images/ASUS_router.png" alt=""  height="40px" class="slider-img">
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </section>
+                <section>
+                    <div class="sliders slider2">
+                        <div class="slider-info">
+                            <div class="info-top">
+                                <h1>Come shop with us</h1>
+                                <p>hurry up and get the best offers now!</p>
+                            </div>
+                            <div class="buttonarea">
+                                <div class="shop-btn">shop</div>
+                               </div>
+                        </div>
+                        
+                        <div class="slider-showcase">
+                            <div class="slider-image">
+                                <img src="images/acer monitor1.png" alt="" class="slider-img">
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </section>
+                <section>
+                    <div class="sliders slider2">
+                        <div class="slider-info">
+                            <div class="slider-info">
+                                <div class="info-top">
+                                    <h1>Come shop with us</h1>
+                                    <p>hurry up and get the best offers now!</p>
+                                </div>
+                                <div class="buttonarea">
+                                    <div class="shop-btn">shop</div>
+                                   </div>
+                              
+                            </div>
+                        </div>
+                        <div class="slider-showcase">
+                            <div class="slider-image">
+                                <img src="images/ASUS_laptop.png" alt="" class="slider-img">
+                            </div>
+                        </div>
+                        
+                    </div>
+                </section>
+                
+            </div>
+            <div class="controls">
+                <span class="arrow prev"><i class="fa-solid fa-angle-left  fa-3x" style="opacity:0.5; color: white;"></i></span>
+                <span class="arrow next"><i class="fa-solid fa-angle-right fa-3x" style="opacity:0.5; color: white;"></i></span>
+            </div>
+        </div>
+    </div>
+
+  {{--   <section class="home" id="home">
         <div class="content">
             <h3>G-commerce offers</h3>
             <span> affordable products</span>
@@ -7,7 +124,7 @@
                 doloribus eius, maxime quos sed quidem beatae!</p>
             <a href="#" class="btn">Shop Now </a>
         </div>
-    </section>
+    </section> --}}
 
     <section class="about" id="about">
         <h1 class="heading"> <span> About</span> Us</h1>
@@ -107,5 +224,49 @@
         </div>
     </section>
 
+    <script>
+        const slider = document.querySelector('.slider');
+    const carousel = document.querySelector('.carousel')
+    const prev =document.querySelector('.prev');
+    const next =document.querySelector('.next');
+    
+    var direction;
+    
+    prev.addEventListener('click', function(){
+        if(direction== -1){
+            slider.appendChild(slider.firstElementChild);
+            direction = 1;
+        }
+        slider.style.transform = 'translate(20%)';
+        carousel.style.justifyContent ='flex-end';
+        
+       
+    
+    });
+    next.addEventListener('click', function(){
+        direction = -1;
+        slider.style.transform = 'translate(-20%)';
+        carousel.style.justifyContent ='flex-start'
+    
+    
+    });
+    
+    slider.addEventListener('transitionend', function(){
+        if (direction == -1){
+            slider.appendChild(slider.firstElementChild);
+    
+        }else if(direction == 1){
+            slider.prepend(slider.lastElementChild);
+        }
+        slider.style.transition ='none';
+        slider.style.transform ='translate(0)';
+        setTimeout(function(){
+            slider.style.transition = 'all 0.5s';
+    
+        });
+    
+    
+    });
+     </script>  
 
 </x-app-layout>
