@@ -58,8 +58,6 @@ html {
     flex-shrink: 0;
     flex: 1;
     display: flex;
-    
-    
 }
 .arrow{
     
@@ -154,52 +152,6 @@ h1,p{
     text-align: center;
     border-radius: 10px;
     background-color: rgb(64, 104, 168);
-}
-@media screen and (max-width: 1110px){
-    .slider-showcase{
-        width:100%;
-        height: 40%;
-    }
-    .sliders{
-        display: flex;
-        justify-content:space-between;
-        align-items: center;
-
-    }
-    .slider-image{
-        width:300px;
-        height:300px;
-    }
-    .container{
-        height: 100vh;
-    }
-    .slider-info{
-        width:100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-}
-@media screen and (max-width: 780px){
-    .slider-info{
-        width:100%;
-        height: 40%;
-     
-        
-    
-
-
-    }
-    
-    .sliders{
-        display: flex;
-        justify-content:space-between;
-        align-items: center;
-
-    }
-    
-   
 }
 
 /* css for the slider */
@@ -799,7 +751,6 @@ border-color: var(--white);
 
 }
 
-
 /*cart css ends here */
 
 /* create product css starts here */
@@ -810,7 +761,11 @@ border-color: var(--white);
 
 /* create product css ends here */
 
-
+/* order css starts here */
+.order-detail{
+    margin-top: 5rem;
+}
+/* order css ends here */
 
 /* media queries  starts here*/
 @media (max-width:991px) {
@@ -908,6 +863,48 @@ border-color: var(--white);
     .heading {
         font-size: 3rem;
     }
+}
+
+@media screen and (max-width: 1110px){
+    .slider-showcase{
+        width:100%;
+        height: 40%;
+    }
+    .sliders{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+
+    }
+    .slider-image{
+        width:300px;
+        height:300px;
+    }
+    .container{
+        height: 100vh;
+    }
+    .slider-info{
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+@media screen and (max-width: 780px){
+    .slider-info{
+        width:100%;
+        height: 40%;
+
+    }
+    
+    .sliders{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+
+    }
+    
 }
 
 /*media queries ends here */
