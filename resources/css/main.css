@@ -346,9 +346,9 @@ header .fa-bars {
 
 
 /*section css starts here */
-/* section {
+ .section {
     padding: 2rem 9%;
-} */
+}
 
 .btn {
     display: inline-block;
@@ -364,42 +364,6 @@ header .fa-bars {
 .btn:hover {
     color: var(--white);
 }
-
-/* the hero banner css starts here*/
-
-.home {
-    display: flex;
-    align-items: center;
-    min-height: 100vh;
-    background: url(../../public/assets/shoes.jpg)no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.home .content {
-    max-width: 50rem;
-}
-
-.home .content h3 {
-    font-size: 6rem;
-    color: #333;
-}
-
-.home .content span {
-    font-size: 3.5rem;
-    color: var(--white);
-    padding: 1rem 0;
-    line-height: 1.5;
-}
-
-.home .content p {
-    font-size: 1.5rem;
-    color: #999;
-    padding: 1rem 0;
-    line-height: 1.5;
-}
-
-/* the hero banner css ends here */
 
 /* the about css starts here*/
 .heading {
