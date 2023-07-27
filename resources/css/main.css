@@ -767,6 +767,13 @@ border-color: var(--white);
 }
 /* order css ends here */
 
+/* profile page css starts here */
+.profile-page{
+ margin-top: 6rem;
+}
+/* profile page css starts ends */
+
+
 /* media queries  starts here*/
 @media (max-width:991px) {
     html {
