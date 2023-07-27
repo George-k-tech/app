@@ -21,7 +21,7 @@
         <br>
         <br>
     </form>
-    
+    <p>details not right? <a href="{{route('profile.edit')}}">click here</a></p>
     <h2>Delivery Details</h2>
 
   </div>
