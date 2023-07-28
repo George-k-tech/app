@@ -1,30 +1,89 @@
 <x-app-layout>
 
-  <div class="order-detail">
-    <h2>customer details</h2>
-    <form>
-        @csrf
-        <label>User Name</label>
-        <input type="text" placeholder="Input your Name" value="{{ auth()->user()->name}}">
-        <br>
-        <br>
-        <label>Phone Number</label>
-        <input type="phone" placeholder="Input phone number">
-        <br>
-        <br>
-        <label>Address</label>
-        <input type="text" placeholder="Input address">
-        <br>
-        <br>
-        <label>Additional information</label>
-        <input type="text" placeholder="input additional info">
-        <br>
-        <br>
-    </form>
-    <p>details not right? <a href="{{route('profile.edit')}}">click here</a></p>
-    <h2>Delivery Details</h2>
+    <div class="order-detail">
+        <div class="order-detail-left">
+            <div class="order-customer-detail">
+                <h2>customer details</h2>
+                <div class="order-hr">
+                </div>
+                <div class="order-customer-desc">
+                    <div class="order-customer-name">
+                        <p>{{ auth()->user()->name }}</p>
+                    </div>
+                    <div class="order-customer-phone">
+                        <p>{{ auth()->user()->phone }}</p>
+                        <p>{{ auth()->user()->address }}</p>
+                        <p>{{ auth()->user()->additionalInfo }}</p>
+                    </div>
+                    <div class="order-customer-update">
+                        <p>Details not right ?<button class="order-customer-btn"><a href="{{ route('profile.edit') }}">
+                                    Modify Details </a></button></p>
+                    </div>
 
-  </div>
+                </div>
+
+            </div>
+
+            <div class="order-delivery-detail">
+                <h2>Delivery details</h2>
+                <div class="order-hr">
+
+                </div>
+                <div class="order-delivery-container">
+                    @if (session('cart'))
+                        @php $total = 0 @endphp
+                        @foreach (session('cart') as $id => $item)
+                            @php $total += $item['price'] * $item['quantity'] @endphp
+
+                            <div class="order-delivery-item">
+                                <div class="order-item">
+                                    <div class="order-item-image"> <img src="{{ $item['image'] }}"></div>
+                                    <div class="order-quantity-desc">
+                                        <p>{{ $item['description'] }}</p>
+                                        <p>QTY:{{ $item['quantity'] }}</p>
+                                    </div>
+                                </div>
+                                <div class="order-item-price">
+                                    <p>Subtotal:{{ $item['price'] * $item['quantity'] }}</p>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+
+
+            </div>
+
+            <div class="order-modify">
+                <p class="modify-btn"> <a href="{{ route('cart.store') }}"> Modify </a> Cart</p>
+            </div>
+        </div>
+
+        <div class="order-detail-right">
+            <h2>Order Summary</h2>
+            <div class="order-hr">
+
+            </div>
+            <div class="order-detail-total">
+                <p> Item's total(<span>{{ count((array) session('cart')) }}</span>)</p>
+                <p>{{ $total }}</a></p>
+            </div>
+
+            <div class="order-item-fee">
+                <p>Delivery fees </p>
+                <p><span>200</span></p>
+            </div>
+
+            <div class="order-detail-sum">
+              <p>Total</p>
+              <p>{{ $total }}</a></p>
+            </div>
+
+            <div class="confirm-order-btn">
+              <button><a href="{{ route('cart.index') }}"></a>confirm Order</button>
+            </div>
+        </div>
+    </div>
 
 
 </x-app-layout>
