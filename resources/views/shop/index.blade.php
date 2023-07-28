@@ -116,17 +116,7 @@
         </div>
     </div>
 
-  {{--   <section class="home" id="home">
-        <div class="content">
-            <h3>G-commerce offers</h3>
-            <span> affordable products</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione doloremque quam iusto asperiores
-                doloribus eius, maxime quos sed quidem beatae!</p>
-            <a href="#" class="btn">Shop Now </a>
-        </div>
-    </section> --}}
-
-    <section class="about" id="about">
+    <section class="about section" id="about">
         <h1 class="heading"> <span> About</span> Us</h1>
         <div class="row">
             <div class="image-container">
@@ -145,7 +135,7 @@
         </div>
     </section>
 
-    <section class="icons-container">
+    <section class="icons-container section">
         <div class="icon">
             <img src="assets/motorbike.png" alt="shipping image">
             <div class="info">
@@ -180,7 +170,7 @@
     </section>
 
 
-    <section class="products" id="products">
+    <section class="products section" id="products" >
         <h1 class="heading"> Latest <span>Products</span></h1>
         <div class="box-container">
 
@@ -207,7 +197,7 @@
         </div>
     </section>
 
-    <section class="contact" id="contact">
+    <section class="contact section" id="contact">
         <h1 class="heading"><span>contact</span>Us</h1>
         <div class="row">
             <form action="">

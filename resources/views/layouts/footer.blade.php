@@ -1,4 +1,4 @@
-<section class="footer">
+<section class="footer section">
     <div class="box-container">
 
         <div class="box">

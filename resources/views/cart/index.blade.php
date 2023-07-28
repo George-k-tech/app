@@ -55,7 +55,7 @@
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, voluptatibus!</p>
                 <div class="hr"></div>
                 <div class="checkout-btn">
-                    <p class="check-btn"><a href="{{ route('cart.store') }}">checkout <span>({{ $total }})</span></a>
+                    <p class="check-btn"><a href="{{route('cart.show')}}">checkout <span>({{ $total }})</span></a>
                     </p>
                     <p class="check-btn"><a href="{{ route('shop.index') }}"> Continue Shopping</a></p>
                 </div>
