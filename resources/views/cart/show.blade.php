@@ -80,7 +80,7 @@
             </div>
 
             <div class="confirm-order-btn">
-              <p><a href="{{ route('cart.store') }}">Confirm Order</a> </p>
+              <p ><a href="{{ route('cart.store') }}">Confirm Order</a> </p>
             </div>
         </div>
     </div>
