@@ -47,6 +47,41 @@
             @endif
         </div>
 
+        <div>
+            <x-input-label for="phone" :value="__('Phone')" />
+            <x-text-input id="phone" name="phone" type="text" class="mt-1 block w-full" :value="old('phone', $user->phone)" required
+                autofocus autocomplete="phone" />
+            <x-input-error class="mt-2" :messages="$errors->get('phone')" />
+        </div>
+
+        <div>
+            <x-input-label for="address" :value="__('Address (Name of Apartment)')" />
+            <x-text-input id="address" name="address" type="text" class="mt-1 block w-full" :value="old('address', $user->address)" required
+                autofocus autocomplete="address" />
+            <x-input-error class="mt-2" :messages="$errors->get('address')" />
+        </div>
+
+        <div>
+            <x-input-label for="additionalInfo" :value="__('Additional Information (Information about general area)')" />
+            <x-text-input id="additionalInfo" name="additionalInfo" type="text" class="mt-1 block w-full" :value="old('additionalInfo', $user->additionalInfo)" required
+                autofocus autocomplete="additionalInfo" />
+            <x-input-error class="mt-2" :messages="$errors->get('additionalInfo')" />
+        </div>
+
+        <div>
+            <x-input-label for="region" :value="__('Region (Nairobi, Kisumu ...)')" />
+            <x-text-input id="region" name="region" type="text" class="mt-1 block w-full" :value="old('region', $user->region)" required
+                autofocus autocomplete="region" />
+            <x-input-error class="mt-2" :messages="$errors->get('region')" />
+        </div>
+
+        <div>
+            <x-input-label for="city" :value="__('City (Kawangware,Utawala, Ngong ...)')" />
+            <x-text-input id="city" name="city" type="text" class="mt-1 block w-full" :value="old('city', $user->city)" required
+                autofocus autocomplete="city" />
+            <x-input-error class="mt-2" :messages="$errors->get('city')" />
+        </div>
+
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 
