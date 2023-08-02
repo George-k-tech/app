@@ -55,7 +55,7 @@
             </div>
 
             <div class="order-modify">
-                <p class="modify-btn"> <a href="{{ route('cart.store') }}"> Modify </a> Cart</p>
+                <p class="modify-btn"> <a href="{{ route('cart.index') }}"> Modify </a> Cart</p>
             </div>
         </div>
 
@@ -80,7 +80,7 @@
             </div>
 
             <div class="confirm-order-btn">
-              <button><a href="{{ route('cart.index') }}"></a>confirm Order</button>
+              <p ><a href="{{ route('cart.store') }}">Confirm Order</a> </p>
             </div>
         </div>
     </div>

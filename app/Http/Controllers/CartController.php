@@ -60,17 +60,16 @@ class CartController extends Controller
     }
 
     public function storeProduct(){
-        $cart = session()->get('cart');
 
-        dd($cart);
+         $items = session()->get('cart');
 
-       /*  foreach ($items as $item){
+         foreach ($items as $item){
             $item['user_id'] = auth()->id();
             $order = Order::create($item);
-            $order->user->name;
+           /*  $order->user->name; */
         }
        
-        return redirect()->back(); */
+        return redirect()->back(); 
 
     }
 

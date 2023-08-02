@@ -116,6 +116,33 @@
         </div>
     </div>
 
+     <section class="products section" id="products" >
+        <h1 class="heading"> Latest <span>Products</span></h1>
+        <div class="box-container">
+
+            @foreach ($products as $item)
+
+                <div class="box">
+                    <span class="discount">-10%</span>
+                    <div class="image">
+                        <img src={{$item->image}} alt="this product">
+                        <div class="icons">
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="{{route('add-to-cart',$item->id)}}" class="cart-btn">Add To Cart</a>
+                            <a href="#" class="fas fa-share"></a>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>{{$item->name}}</h3>
+                        <div class="price">
+                            ${{$item->price}} <span>$the price was</span></div>
+                    </div>
+                </div>
+
+            @endforeach
+        </div>
+    </section>
+    
     <section class="about section" id="about">
         <h1 class="heading"> <span> About</span> Us</h1>
         <div class="row">
@@ -169,33 +196,6 @@
         </div>
     </section>
 
-
-    <section class="products section" id="products" >
-        <h1 class="heading"> Latest <span>Products</span></h1>
-        <div class="box-container">
-
-            @foreach ($products as $item)
-
-                <div class="box">
-                    <span class="discount">-10%</span>
-                    <div class="image">
-                        <img src={{$item->image}} alt="this product">
-                        <div class="icons">
-                            <a href="#" class="fas fa-heart"></a>
-                            <a href="{{route('add-to-cart',$item->id)}}" class="cart-btn">Add To Cart</a>
-                            <a href="#" class="fas fa-share"></a>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <h3>{{$item->name}}</h3>
-                        <div class="price">
-                            ${{$item->price}} <span>$the price was</span></div>
-                    </div>
-                </div>
-
-            @endforeach
-        </div>
-    </section>
 
     <section class="contact section" id="contact">
         <h1 class="heading"><span>contact</span>Us</h1>
