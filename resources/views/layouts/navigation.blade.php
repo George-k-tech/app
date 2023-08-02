@@ -8,7 +8,7 @@
         <nav class="navbar">
             <a href="{{ route('shop.index') }}">Shop</a>
             <a href="{{ route('product.index') }}">Products</a>
-            <a href="#tobe known">To be Known</a>
+            <a href="{{route('admin.index')}}">Admin</a>
             <a href="#tobe known 2">To be known 2</a>
             @if (Route::has('login'))
                 @auth

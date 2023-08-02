@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -25,13 +26,13 @@ Route::get('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add
 Route::delete('/delete-cart-product', [CartController::class, 'deleteProduct'])->name('delete.cart.product');
 Route::patch('/update-cart-product', [CartController::class, 'updateProduct'])->name('update.cart');
 
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
 //application routes for authorized users
 
 Route::middleware('auth')->group(function () {
     Route::get('/cart-order-store', [CartController::class, 'storeProduct'])->name('cart.store');
     Route::get('/cart-show', [CartController::class, 'showProduct'])->name('cart.show');
-   
-
 });
 
 
