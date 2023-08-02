@@ -874,7 +874,7 @@ header .fa-bars {
     justify-content: center;
     align-items: center;
 }
-.confirm-order-btn button{
+.confirm-order-btn {
 margin-top: 20px;
 width: 100%;
 height: 40px;

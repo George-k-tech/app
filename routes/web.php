@@ -27,9 +27,10 @@ Route::patch('/update-cart-product', [CartController::class, 'updateProduct'])->
 
 //application routes for authorized users
 
-Route::middleware('auth', 'verified')->group(function () {
+Route::middleware('auth')->group(function () {
+    Route::get('/cart-order-store', [CartController::class, 'storeProduct'])->name('cart.store');
     Route::get('/cart-show', [CartController::class, 'showProduct'])->name('cart.show');
-    Route::get('/cart-store', [CartController::class, 'storeProduct'])->name('cart.store');
+   
 
 });
 
