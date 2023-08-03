@@ -26,8 +26,6 @@ Route::get('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add
 Route::delete('/delete-cart-product', [CartController::class, 'deleteProduct'])->name('delete.cart.product');
 Route::patch('/update-cart-product', [CartController::class, 'updateProduct'])->name('update.cart');
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-
 //application routes for authorized users
 
 Route::middleware('auth')->group(function () {
@@ -44,6 +42,9 @@ Route::middleware('auth')->group(function () {
 });
 
 //admin routes
+Route::middleware('auth', 'role:admin')->group(function(){
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+});
 Route::resource('/product', ProductController::class)->middleware(['auth', 'verified', 'role:admin']);
 
 
