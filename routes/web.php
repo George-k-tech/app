@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -30,8 +31,6 @@ Route::patch('/update-cart-product', [CartController::class, 'updateProduct'])->
 Route::middleware('auth')->group(function () {
     Route::get('/cart-order-store', [CartController::class, 'storeProduct'])->name('cart.store');
     Route::get('/cart-show', [CartController::class, 'showProduct'])->name('cart.show');
-   
-
 });
 
 
@@ -43,6 +42,9 @@ Route::middleware('auth')->group(function () {
 });
 
 //admin routes
+Route::middleware('auth', 'role:admin')->group(function(){
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
+});
 Route::resource('/product', ProductController::class)->middleware(['auth', 'verified', 'role:admin']);
 
 

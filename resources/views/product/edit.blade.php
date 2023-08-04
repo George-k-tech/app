@@ -1,4 +1,7 @@
-<x-app-layout>
+@extends('admin.index')
+
+@section('content')
+
     <div>
         <div>
             <h1>Edit Product Page</h1>
@@ -32,4 +35,5 @@
             <button type="submit">Update</button>
         </form>
     </div>
-</x-app-layout>
+
+@endsection
