@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-admin>
     <div class="test">
         <div><h1>Product page</h1></div>
         <a href="{{ route('product.create') }}"> Create Product</a>
@@ -37,4 +37,4 @@
             </tbody>
         </table>
     </div>
-</x-app-layout>
+</x-admin-admin>

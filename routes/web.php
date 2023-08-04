@@ -43,7 +43,7 @@ Route::middleware('auth')->group(function () {
 
 //admin routes
 Route::middleware('auth', 'role:admin')->group(function(){
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
 });
 Route::resource('/product', ProductController::class)->middleware(['auth', 'verified', 'role:admin']);
 
