@@ -1,4 +1,6 @@
-<x-admin-admin>
+@extends('admin.index')
+
+@section('content')
     <div class="test">
         <div><h1>Product page</h1></div>
         <a href="{{ route('product.create') }}"> Create Product</a>
@@ -37,4 +39,5 @@
             </tbody>
         </table>
     </div>
-</x-admin-admin>
+
+@endsection
