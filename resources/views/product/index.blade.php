@@ -29,8 +29,8 @@
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->description }}</td>
                         <td>{{ $item->price }}</td>
-                        <td><a href="{{ url('product/'. $item->id.'/edit') }}"> Edit</a> </td>
                         <td><a href="{{ url('product/'.$item->id.'/delete') }}">Delete</a></td>
+                        <td><a href="{{ url('product/'. $item->id.'/edit') }}"> Edit</a> </td>
                     </tr>
                 @endforeach
             </tbody>
