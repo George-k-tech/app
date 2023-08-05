@@ -44,8 +44,14 @@ Route::middleware('auth')->group(function () {
 //admin routes
 Route::middleware('auth', 'role:admin')->group(function(){
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
+
+    Route::get('/product',[ProductController::class, 'index'])->name('product.index');
+    Route::get('/product/create',[ProductController::class, 'create'])->name('product.create');
+    Route::post('/product/store', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/product/{product}/edit', [ProductController::class, 'edit'])->name('product.edit');
+    Route::put('/product/{product}', [ProductController::class, 'update'])->name('product.update');
+    Route::get('/product/{product_id}/delete', [ProductController::class, 'destroy'])->name('product.delete');
 });
-Route::resource('/product', ProductController::class)->middleware(['auth', 'verified', 'role:admin']);
 
 
 require __DIR__ . '/auth.php';
