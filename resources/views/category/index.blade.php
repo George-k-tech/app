@@ -22,12 +22,15 @@
         </thead>
 
         <tbody>
+            @foreach ($categories as $key=>$item)
             <tr>
-                <td>Id</td>
-                <td>Name</td>
+                <td>{{$key + 1}}</td>
+                <td>{{$item->id}}</td>
+                <td>{{$item->name}}</td>
                 <td><a href="{{-- {{url('category/'. .$item->id.'/edit')}} --}}">Edit</a></td>
                 <td><a href="{{-- {{url('category/'. .$item->id.'/delete')}} --}}">Delete</a></td>
-            </tr>
+            </tr> 
+            @endforeach
         </tbody>
     </table>
 @endsection
