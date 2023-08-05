@@ -27,8 +27,8 @@
                 <td>{{$key + 1}}</td>
                 <td>{{$item->id}}</td>
                 <td>{{$item->name}}</td>
-                <td><a href="{{-- {{url('category/'. .$item->id.'/edit')}} --}}">Edit</a></td>
-                <td><a href="{{-- {{url('category/'. .$item->id.'/delete')}} --}}">Delete</a></td>
+                <td><a href="{{url('category/'.$item->id.'/edit')}}">Edit</a></td>
+                <td><a href="{{url('category/'.$item->id.'/delete')}}">Delete</a></td>
             </tr> 
             @endforeach
         </tbody>
