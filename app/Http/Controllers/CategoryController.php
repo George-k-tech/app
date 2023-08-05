@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -12,7 +13,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+
+        return view('category.index', compact('categories'));
     }
 
     /**
@@ -20,7 +23,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('category.create');
     }
 
     /**
@@ -28,7 +32,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Category::create([
+
+            'name' => $request->name,
+            'slug' =>Str::slug($request->name),
+        ]);
+
+        return redirect('category')->with('message', 'category created successfuly');
     }
 
     /**
@@ -58,8 +68,9 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Category $category)
+    public function destroy(int $category_id)
     {
-        //
+        Category::findOrFail($category_id)->delete();
+        return redirect('category')->with('message', 'category deleted successfully');
     }
 }

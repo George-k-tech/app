@@ -14,6 +14,7 @@
             <thead>
                 <tr>
                     <th>#</th>
+                    <th>Category</th>
                     <th>Image</th>
                     <th>name</th>
                     <th>description</th>
@@ -25,12 +26,13 @@
                 @foreach ($products as $key => $item)
                     <tr>
                         <td>{{ $key + 1 }}</td>
+                        <td>{{$item->category->name}}</td>
                         <td><img src="{{ $item->image }}" alt="Product Image" style="width:20%"></td>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->description }}</td>
                         <td>{{ $item->price }}</td>
-                        <td><a href="{{ url('product/'. $item->id.'/edit') }}"> Edit</a> </td>
                         <td><a href="{{ url('product/'.$item->id.'/delete') }}">Delete</a></td>
+                        <td><a href="{{ url('product/'. $item->id.'/edit') }}"> Edit</a> </td>
                     </tr>
                 @endforeach
             </tbody>
