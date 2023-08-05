@@ -1,6 +1,8 @@
 @extends('admin.index')
 
 @section('content')
+
+
     <div class="test" >
         <div class="test">
             <h1>Create Product Page</h1>
@@ -8,7 +10,7 @@
         <div>
             <a href="{{route('product.index')}}"> View Products</a>
         </div>
-        <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('product.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div>
                 <label for="image">Image</label>

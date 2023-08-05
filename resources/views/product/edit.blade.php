@@ -11,6 +11,8 @@
         </div>
         <form action="{{url('product/'.$product->id)}}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
+            
             <div>
                 <label for="image">Image</label>
                 <input type="file" name="image" placeholder="product Image" value="{{ $product->image }}">

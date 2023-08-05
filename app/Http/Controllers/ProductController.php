@@ -12,7 +12,7 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index():View
+    public function index(): View
     {
         $products = Product::all();
         return view('product.index', compact('products'));
@@ -21,7 +21,7 @@ class ProductController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create():View
+    public function create(): View
     {
         return view('product.create');
     }
@@ -32,27 +32,30 @@ class ProductController extends Controller
     public function store(Request $request)
     {
 
-        $request->validate([
+         $request->validate([
             'name' => 'required',
             'description' =>'required',
             'price' =>'required',
             'image' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-      $filename = '';
-      if($request->hasFile('image')){
-        $filename = $request ->getSchemeAndHttpHost() . '/assets/image/' . time() . '.' . $request->image->extension();
-        $request->image->move(public_path('/assets/image/'), $filename);
-      }
-      $slug = Str::slug($request->name, '-');
-      $products = new Product;
-      $products->image = $filename;
-      $products->name = $request->name;
-      $products->description = $request->description;
-      $products->price = $request->price;
-      $products->slug = $slug;
-      $products->save();
-      return redirect()->back();
+        $filename = '';
+        if ($request->hasFile('image')) {
+            $filename = $request->getSchemeAndHttpHost() . '/assets/image/' . time() . '.' . $request->image->extension();
+            $request->image->move(public_path('/assets/image/'), $filename);
+        }
+
+        $slug = Str::slug($request->name, '-');
+
+        $products = new Product;
+        $products->image = $filename;
+        $products->name = $request->name;
+        $products->description = $request->description;
+        $products->price = $request->price;
+        $products->slug = $slug;
+        $products->save();
+
+        return redirect('product')->with('message', 'producted created succefuly');
     }
 
     /**
@@ -66,46 +69,46 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit( string $id)
+    public function edit(int $product)
     {
-        $product = Product::find($id);
+        $product = Product::findOrFail($product);
         return view('product.edit', compact('product'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request,$product_id)
     {
         $request->validate([
             'name' => 'required',
-            'description' =>'required',
-            'price' =>'required',
-            'image' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'description' => 'required',
+            'price' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-      $filename = '';
-      if($request->hasFile('image')){
-        $filename = $request ->getSchemeAndHttpHost() . '/assets/image/' . time() . '.' . $request->image->extension();
-        $request->image->move(public_path('/assets/image/'), $filename);
-      }
-      $slug = Str::slug($request->name, '-');
-      $product = Product::find($id);
-      $product->image = $filename;
-      $product->name = $request->name;
-      $product->description = $request->description;
-      $product->price = $request->price;
-      $product->slug = $slug;
-      $product->update();
-      return redirect()->back();
+        $filename = '';
+        if ($request->hasFile('image')) {
+            $filename = $request->getSchemeAndHttpHost() . '/assets/image/' . time() . '.' . $request->image->extension();
+            $request->image->move(public_path('/assets/image/'), $filename);
+        }
+        $slug = Str::slug($request->name, '-');
+        $product = Product::find($product_id);
+        $product->image = $filename;
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->slug = $slug;
+        $product->update();
+        return redirect('product')->with('message', 'product updated succefully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destroy(int $product_id)
     {
-        $product->delete();
-        return redirect()->back();
+        Product::findOrFail($product_id)->delete();
+        return redirect('product')->with('message', 'product deleted');
     }
 }
