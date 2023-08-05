@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use Illuminate\Http\Request;
-use Illuminate\View\View;
+use App\Models\Category;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index()
     {
         $products = Product::all();
         return view('product.index', compact('products'));
@@ -21,9 +21,11 @@ class ProductController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): View
+    public function create()
     {
-        return view('product.create');
+        $categories = Category::all();
+
+        return view('product.create', compact('categories'));
     }
 
     /**
@@ -31,13 +33,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-
-         $request->validate([
-            'name' => 'required',
-            'description' =>'required',
-            'price' =>'required',
-            'image' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+        $category = Category::findOrFail($request->category_id);
 
         $filename = '';
         if ($request->hasFile('image')) {
@@ -45,17 +41,25 @@ class ProductController extends Controller
             $request->image->move(public_path('/assets/image/'), $filename);
         }
 
-        $slug = Str::slug($request->name, '-');
+        $product = new Product;
+        $product->name = $request->name;
+        $product->image = $filename;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->slug = Str::slug($request->name);
 
-        $products = new Product;
-        $products->image = $filename;
-        $products->name = $request->name;
-        $products->description = $request->description;
-        $products->price = $request->price;
-        $products->slug = $slug;
-        $products->save();
+        $category->products()->save($product);
 
-        return redirect('product')->with('message', 'producted created succefuly');
+      return redirect('product')->with('message', 'producted created succefuly');  
+
+       /*    $request->validate([
+            'name' => 'required',
+            'description' =>'required',
+            'price' =>'required',
+            'image' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]); */
+
+
     }
 
     /**

@@ -14,6 +14,7 @@
             <thead>
                 <tr>
                     <th>#</th>
+                    <th>Category</th>
                     <th>Image</th>
                     <th>name</th>
                     <th>description</th>
@@ -25,6 +26,7 @@
                 @foreach ($products as $key => $item)
                     <tr>
                         <td>{{ $key + 1 }}</td>
+                        <td>{{$item->category->name}}</td>
                         <td><img src="{{ $item->image }}" alt="Product Image" style="width:20%"></td>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->description }}</td>
