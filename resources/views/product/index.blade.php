@@ -1,11 +1,12 @@
 @extends('admin.index')
 
 @section('content')
-    @if (session('message'))
+
+    <div class="test">
+        @if (session('message'))
         <div>{{ session('message') }}</div>
     @endif
 
-    <div class="test">
         <div class="admin-product-title">
             <h1>Product page</h1>
         </div>

@@ -6,7 +6,7 @@
     <div class="cards">
         <div class="card-single">
             <div>
-                <h1>54</h1>
+                <p>{{count($users)}}</p>
                 <span>Customers</span>
             </div>
             <div>
@@ -16,8 +16,8 @@
 
         <div class="card-single">
             <div>
-                <h1>79</h1>
-                <span>Projects</span>
+                <p>{{count($categories)}}</p>
+                <span>Categories</span>
             </div>
             <div>
                 <span class="las la-clipboard-list"></span>
@@ -26,7 +26,17 @@
 
         <div class="card-single">
             <div>
-                <h1>124</h1>
+               <p>{{count($products)}}</p>
+                <span>Products</span>
+            </div>
+            <div>
+                <span class="las la-clipboard-list"></span>
+            </div>
+        </div>
+
+        <div class="card-single">
+            <div>
+                <p>{{count($orders)}}</p>
                 <span>Orders</span>
             </div>
             <div>
@@ -54,7 +64,7 @@
         <div class="card">
 
             <div class="card-header">
-                <h3>Recent projects</h3>
+                <h3>Recent Orders</h3>
                 <button>see all <span class="las la-arrow-right"></span></button>
             </div>
 
