@@ -21,7 +21,7 @@
 
         @include('admin.adminTopNav')
 
-        @include('admin.adminStats')
+    
 
 
         @yield('content')
