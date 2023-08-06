@@ -7,10 +7,10 @@
 
     <div class="sidebar-menu">
         <ul>
-            <li><a href="{{ route('admin.dashboard') }}" class="active"><span class="las la-igloo"></span>
+            <li><a href="{{ route('admin.dashboard') }}" ><span class="las la-igloo"></span>
                     <span> Dashboard</span></a>
             </li>
-            <li><a href="{{ route('product.index') }}"><span class="las la-clipboard-list"></span>
+            <li><a href="{{ route('product.index') }}" ><span class="las la-clipboard-list"></span>
                     <span>Products</span></a>
             </li>
             <li><a href="{{ route('category.index') }}"><span class="las la-clipboard-list"></span>
