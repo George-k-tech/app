@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="admin-create">
+        @if (session('message'))
+        <div>{{ session('message') }}</div>
+    @endif
 
         <div class="admin-create-title">
             <a href="{{ route('product.index') }}" class="fa-solid fa-arrow-left fa-2xl"></a>
