@@ -537,7 +537,8 @@ tr td:last-child {
 .admin-select {
     width: 60%;
 }
-.admin-create-form button{
+
+.admin-create-form button {
     text-align: center;
     margin: 20px;
     padding: 8px 16px;
@@ -546,8 +547,122 @@ tr td:last-child {
     width: 100%;
 }
 
+/*category view css */
+.admin-category {
+    margin-top: 70px;
+    padding: 20px;
+    width: 70%;
+}
+
+.admin-category-head {
+    text-align: center;
+    font-weight: 600;
+}
+
+.category-hr {
+    height: 1px;
+    content: "";
+    background-color: black;
+}
+
+.admin-category-btn {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.category-create-a {
+    padding: 8px 16px;
+    background-color: orange;
+    border-radius: 20px;
+}
+
+.admin-category-body-head {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.admin-category-body-body {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.admin-category-body-body .div {
+    height: 80px;
+    width: 100px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.category-action {
+    display: flex;
+    justify-content: space-between;
+}
+
+.category-edit-btn {
+    padding: 8px 14px;
+    background-color: orange;
+    border-radius: 20px;
+}
+
+/*category view css */
+
+/* category create css*/
+.admin-create-category {
+    margin-top: 70px;
+    padding: 20px;
+    display: flex;
+
+}
+
+.admin-create-category-back {
+    padding: 20px;
+}
+
+.admin-category-card {
+    width: 50%;
+    margin-left: 20%;
+    height: 200px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.admin-create-category-title {
+    text-align: center;
+    font-weight: 600;
+}
+
+.category-create-hr {
+    height: 1px;
+    background-color: black;
+}
+
+.admin-category-create-in {
+    justify-items: center;
+    align-items: center;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.admin-save-category-btn{
+    padding: 30px 30px;
+}
+
+.admin-save-category-btn button{
+    text-align: center;
+    padding: 8px 16px;
+    background-color: orange;
+    border-radius: 10px;
+    width: 100%;
+}
 
 
+
+/* category create css*/
 
 
 /* product create page */

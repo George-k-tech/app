@@ -16,7 +16,7 @@
             <li><a href="{{ route('category.index') }}"><span class="las la-clipboard-list"></span>
                     <span>Category</span></a>
             </li>
-            <li><a href=""><span class="las la-shopping-bag"></span>
+            <li><a href="{{route('order.index')}}"><span class="las la-shopping-bag"></span>
                     <span>Order</span></a>
             </li>
             <li><a href=""><span class="las la-receipt"></span>
