@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShopController;
@@ -57,6 +58,8 @@ Route::middleware('auth', 'role:admin')->group(function(){
     Route::get('/category/{category}/edit', [CategoryController::class, 'edit'])->name('category.edit');
     Route::put('/category/{category}', [CategoryController::class, 'update'])->name('category.update');
     Route::get('/category/{category_id}/delete', [CategoryController::class, 'destroy'])->name('category.delete');
+
+    Route::get('/order', [OrdersController::class, 'index'])->name('order.index');
 });
 
 

@@ -65,7 +65,7 @@
 
             <div class="card-header">
                 <h3>Recent Orders</h3>
-                <button>see all <span class="las la-arrow-right"></span></button>
+                <button><a  href="{{route('order.index')}}"> <span class="las la-arrow-right"></span>see all</a></button>
             </div>
 
             <div class="card-body">
