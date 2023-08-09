@@ -135,6 +135,7 @@
     <section class="products section" id="products">
         @foreach($categories as $category)
         <h1 class="heading"> Deals on <span>{{$category->name}}</span></h1>
+        <p><a href="{{url('/shop/'.$category->slug)}}">See All</a></p>
         <div class="box-container">
 
             @foreach ($category->products as $product)
@@ -145,7 +146,7 @@
                         <div class="icons">
                             <a href="#" class="fas fa-heart"></a>
                             <a href="{{ route('add-to-cart', $product->id) }}" class="cart-btn">Add To Cart</a>
-                            <a href="#" class="fas fa-share"></a>
+                            <a href="{{url('/shop/'.$category->slug.'/'.$product->slug)}}" > More Details</a>
                         </div>
                     </div>
                     <div class="content">

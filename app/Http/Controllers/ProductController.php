@@ -65,9 +65,14 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($category_slug,$product_slug)
     {
-        //
+        $category = Category::where('slug', $category_slug)->first();
+
+        $product = $category->products()->where('slug', $product_slug)->first();
+
+        return view('product.show', compact('product'));
+
     }
 
     /**
