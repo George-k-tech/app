@@ -22,12 +22,12 @@
                             <input type="text" placeholder="region(Nairobi,Kisumu ...)" name="region">
                         </div>
                         <div class="order-customer-area">
-                            <label>Area:</label>
+                            <label>Area :</label>
                             <input type="text" placeholder="Area(Kawangware,Utawala ...)" name="area">
                         </div>
                         <div class="order-customer-additionalInfo">
                             <label>Additional Info :</label>
-                            <textarea placeholder="Write any additional information here..."></textarea>
+                            <textarea placeholder="Write any additional information here..." name="additionalInfo"></textarea>
                         </div>
                         <div class="order-customer-update">
                             <button class="order-customer-btn" type="submit">Update Details</button>
