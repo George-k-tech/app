@@ -660,10 +660,30 @@ tr td:last-child {
     width: 100%;
 }
 
-
-
 /* category create css*/
 
+/* orders page css starts here */
+
+.admin-order{
+    margin-top: 70px;
+}
+.admin-order-title{
+    font-size: 24px;
+    text-align: center;
+    padding: 10px 0;
+}
+.admin-order-body-header{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.admin-order-body-body{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* orders page css starts here */
 
 /* product create page */
 

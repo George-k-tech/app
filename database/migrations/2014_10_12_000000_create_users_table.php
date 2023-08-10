@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->boolean('is_admin')->default(0);
-            $table->string('phone')->nullable();
+           /*  $table->string('phone')->nullable();
             $table->string('address')->nullable();
             $table->string('additionalInfo')->nullable();
             $table->string('region')->nullable();
-            $table->string('city')->nullable();
+            $table->string('city')->nullable(); */
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

@@ -7,19 +7,32 @@
                 <div class="order-hr">
                 </div>
                 <div class="order-customer-desc">
-                    <div class="order-customer-name">
-                        <p>{{ auth()->user()->name }}</p>
-                    </div>
-                    <div class="order-customer-phone">
-                        <p>{{ auth()->user()->phone }}</p>
-                        <p>{{ auth()->user()->address }}</p>
-                        <p>{{ auth()->user()->additionalInfo }}</p>
-                    </div>
-                    <div class="order-customer-update">
-                        <p>Details not right ?<button class="order-customer-btn"><a href="{{ route('profile.edit') }}">
-                                    Modify Details </a></button></p>
-                    </div>
-
+                    <form>
+                        <div class="order-customer-name">
+                            <label>Name : </label>
+                            <input type="text" placeholder="Input Customer Name" name="name"
+                                value="{{ auth()->user()->name }}">
+                        </div>
+                        <div class="order-customer-phone">
+                            <label>Phone :</label>
+                            <input type="text" placeholder="Input Phone Number" name="phone">
+                        </div>
+                        <div class="order-customer-region">
+                            <label>Region :</label>
+                            <input type="text" placeholder="region(Nairobi,Kisumu ...)" name="region">
+                        </div>
+                        <div class="order-customer-area">
+                            <label>Area:</label>
+                            <input type="text" placeholder="Area(Kawangware,Utawala ...)" name="area">
+                        </div>
+                        <div class="order-customer-additionalInfo">
+                            <label>Additional Info :</label>
+                            <textarea placeholder="Write any additional information here..."></textarea>
+                        </div>
+                        <div class="order-customer-update">
+                            <button class="order-customer-btn" type="submit">Update Details</button>
+                        </div>
+                    </form>
                 </div>
 
             </div>
@@ -75,12 +88,12 @@
             </div>
 
             <div class="order-detail-sum">
-              <p>Total</p>
-              <p>{{ $total }}</a></p>
+                <p>Total</p>
+                <p>{{ $total }}</a></p>
             </div>
 
             <div class="confirm-order-btn">
-              <p ><a href="{{ route('cart.store') }}">Confirm Order</a> </p>
+                <p><a href="{{ route('cart.store') }}">Confirm Order</a> </p>
             </div>
         </div>
     </div>
