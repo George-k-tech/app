@@ -3,11 +3,12 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CustomerInfoController;
+use App\Http\Controllers\CustomerDetailController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShopController;
+use App\Models\CustomerDetail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,7 +31,7 @@ Route::get('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add
 Route::delete('/delete-cart-product', [CartController::class, 'deleteProduct'])->name('delete.cart.product');
 Route::patch('/update-cart-product', [CartController::class, 'updateProduct'])->name('update.cart');
 
-Route::post('/customer-info', [CustomerInfoController::class, 'store'])->name('customer.store');
+Route::post('/customer-detail', [CustomerDetailController::class, 'store'])->name('customer.store');
 
 //application routes for authorized users
 

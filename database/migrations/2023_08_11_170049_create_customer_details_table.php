@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('region')->nullable();
             $table->string('area')->nullable();
             $table->string('additionalInfo')->nullable();
-            $table->foreign('customer_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps('');
         });
     }

@@ -2,40 +2,43 @@
 
     <div class="order-detail">
         @if (session('message'))
-        <div>{{ session('message') }}</div>
+            <div>{{ session('message') }}</div>
         @endif
         <div class="order-detail-left">
             <div class="order-customer-detail">
                 <h2>customer details</h2>
                 <div class="order-hr">
                 </div>
+
                 <div class="order-customer-desc">
-                    <form action="{{route('customer.store')}}" method="POST">
+                    <form action="{{ route('customer.store') }}" method="POST">
                         @csrf
+                        @foreach($info as $item)
                         <div class="order-customer-name">
                             <label>Name : </label>
                             <input type="text" placeholder="Input Customer Name" name="name"
-                                value="">
+                                value="{{ Auth::user()->name }}">
                         </div>
                         <div class="order-customer-phone">
                             <label>Phone :</label>
-                            <input type="text" placeholder="Input Phone Number" name="phone">
+                            <input type="text" placeholder="Input Phone Number" name="phone" value="{{$item->phone}}">
                         </div>
                         <div class="order-customer-region">
                             <label>Region :</label>
-                            <input type="text" placeholder="region(Nairobi,Kisumu ...)" name="region">
+                            <input type="text" placeholder="region(Nairobi,Kisumu ...)" name="region" value="{{$item->region}}">
                         </div>
                         <div class="order-customer-area">
                             <label>Area :</label>
-                            <input type="text" placeholder="Area(Kawangware,Utawala ...)" name="area">
+                            <input type="text" placeholder="Area(Kawangware,Utawala ...)" name="area" value="{{$item->area}}">
                         </div>
                         <div class="order-customer-additionalInfo">
                             <label>Additional Info :</label>
-                            <textarea placeholder="Write any additional information here..." name="additionalInfo"></textarea>
+                            <textarea placeholder="Write any additional information here..." name="additionalInfo" >{{$item->additionalInfo}}</textarea>
                         </div>
                         <div class="order-customer-update">
                             <button class="order-customer-btn" type="submit">Update Details</button>
                         </div>
+                        @endforeach
                     </form>
                 </div>
 

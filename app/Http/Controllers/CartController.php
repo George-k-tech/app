@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CustomerDetail;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -74,7 +75,9 @@ class CartController extends Controller
     }
 
     public function showProduct(){
-        return view('cart.show');
+        $info = CustomerDetail::all();
+
+        return view('cart.show', compact('info'));
     }
     
 }

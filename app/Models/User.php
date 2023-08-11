@@ -44,7 +44,4 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function customerDetail(){
-        return $this->hasOne(CustomerDetail::class, 'customer_id', 'id');
-    }
 }
