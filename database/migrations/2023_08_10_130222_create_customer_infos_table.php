@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('customer_infos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('customer_id')->unique();
+            $table->string('phone');
+            $table->string('region');
+            $table->string('area');
+            $table->string('additionalInfo');
+            $table->foreign('customer_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -1,13 +1,17 @@
 <x-app-layout>
 
     <div class="order-detail">
+        @if (session('message'))
+        <div>{{ session('message') }}</div>
+        @endif
         <div class="order-detail-left">
             <div class="order-customer-detail">
                 <h2>customer details</h2>
                 <div class="order-hr">
                 </div>
                 <div class="order-customer-desc">
-                    <form>
+                    <form action="{{route('customer.store')}}" method="POST">
+                        @csrf
                         <div class="order-customer-name">
                             <label>Name : </label>
                             <input type="text" placeholder="Input Customer Name" name="name"
