@@ -15,7 +15,7 @@
                         <div class="order-customer-name">
                             <label>Name : </label>
                             <input type="text" placeholder="Input Customer Name" name="name"
-                                value="{{ auth()->user()->name }}">
+                                value="{{old('name'.$user->name)}}">
                         </div>
                         <div class="order-customer-phone">
                             <label>Phone :</label>
