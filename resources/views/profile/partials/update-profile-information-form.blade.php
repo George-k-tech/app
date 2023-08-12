@@ -47,7 +47,7 @@
             @endif
         </div>
 
-        <div>
+     {{--    <div>
             <x-input-label for="phone" :value="__('Phone')" />
             <x-text-input id="phone" name="phone" type="text" class="mt-1 block w-full" :value="old('phone', $user->phone)" required
                 autofocus autocomplete="phone" />
@@ -80,7 +80,7 @@
             <x-text-input id="city" name="city" type="text" class="mt-1 block w-full" :value="old('city', $user->city)" required
                 autofocus autocomplete="city" />
             <x-input-error class="mt-2" :messages="$errors->get('city')" />
-        </div>
+        </div> --}}
 
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>

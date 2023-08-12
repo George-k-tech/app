@@ -3,10 +3,12 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomerDetailController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShopController;
+use App\Models\CustomerDetail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,10 +24,18 @@ use Illuminate\Support\Facades\Route;
 
 //all application routes generally
 Route::get('/', [ShopController::class, 'index'])->name('shop.index');
+Route::get('shop/{category_slug}', [ShopController::class, 'show'])->name('shop.show');
+Route::get('shop/{category_slug}/{product_slug}', [ProductController::class, 'show'])->name('product.show');
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::get('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add-to-cart');
 Route::delete('/delete-cart-product', [CartController::class, 'deleteProduct'])->name('delete.cart.product');
 Route::patch('/update-cart-product', [CartController::class, 'updateProduct'])->name('update.cart');
+
+Route::get('/customer-detail-create', [CustomerDetailController::class, 'create'])->name('customer.create');
+Route::post('/customer-detail-store', [CustomerDetailController::class, 'store'])->name('customer.store');
+Route::get('/customer-detail-index', [CustomerDetailController::class, 'index'])->name('customer.index');
+Route::get('/customer-detail-edit/{customer}/edit', [CustomerDetailController::class, 'edit'])->name('customer.edit');
+Route::put('/customer-detail-update/{customer_id}', [CustomerDetailController::class, 'update'])->name('customer.update');
 
 //application routes for authorized users
 

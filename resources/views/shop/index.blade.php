@@ -6,7 +6,7 @@
                     <div class="sliders slider1">
                         <div class="slider-info">
                             <div class="info-top">
-                                <h1>Come shop with us</h1>
+                                <p>Come shop with us</p>
                                 <p>hurry up and get the best offers now!</p>
                             </div>
                             <div class="buttonarea">
@@ -26,7 +26,7 @@
                     <div class="sliders slider2">
                         <div class="slider-info">
                             <div class="info-top">
-                                <h1>Come shop with us</h1>
+                                <p>Come shop with us</p>
                                 <p>hurry up and get the best offers now!</p>
                             </div>
                             <div class="buttonarea">
@@ -46,7 +46,7 @@
                     <div class="sliders slider2">
                         <div class="slider-info">
                             <div class="info-top">
-                                <h1>Come shop with us</h1>
+                                <p>Come shop with us</p>
                                 <p>hurry up and get the best offers now!</p>
                             </div>
                             <div class="buttonarea">
@@ -66,7 +66,7 @@
                     <div class="sliders slider2">
                         <div class="slider-info">
                             <div class="info-top">
-                                <h1>Come shop with us</h1>
+                                <p>Come shop with us</p>
                                 <p>hurry up and get the best offers now!</p>
                             </div>
                             <div class="buttonarea">
@@ -88,7 +88,7 @@
                         <div class="slider-info">
                             <div class="slider-info">
                                 <div class="info-top">
-                                    <h1>Come shop with us</h1>
+                                    <p>Come shop with us</p>
                                     <p>hurry up and get the best offers now!</p>
                                 </div>
                                 <div class="buttonarea">
@@ -134,19 +134,18 @@
 
     <section class="products section" id="products">
         @foreach($categories as $category)
-        <h1 class="heading"> Deals on <span>{{$category->name}}</span></h1>
+        <div class="product-head-title">
+            <p class="product-deals"> Deals on {{$category->name}}</p>
+           <p class="product-deals-btn"><a  href="{{url('/shop/'.$category->slug)}}"> <span class="las la-arrow-right"></span>see all</a></p> 
+        </div>
+       
         <div class="box-container">
 
             @foreach ($category->products as $product)
                 <div class="box">
                     <span class="discount">-10%</span>
                     <div class="image">
-                        <img src={{ $product->image }} alt="this product">
-                        <div class="icons">
-                            <a href="#" class="fas fa-heart"></a>
-                            <a href="{{ route('add-to-cart', $product->id) }}" class="cart-btn">Add To Cart</a>
-                            <a href="#" class="fas fa-share"></a>
-                        </div>
+                       <a href="{{url('/shop/'.$category->slug.'/'.$product->slug)}}"><img  src={{ $product->image }} alt="this product"></a> 
                     </div>
                     <div class="content">
                         <h3>{{ $product->name }}</h3>
@@ -160,7 +159,7 @@
     </section>
 
     <section class="products section" id="products">
-        <h1 class="heading"> Recent <span>Products</span></h1>
+        <p class="heading"> Recent <span>Products</span></p>
         <div class="box-container">
 
             @foreach ($products as $item)
@@ -185,7 +184,7 @@
     </section>
 
     <section class="about section" id="about">
-        <h1 class="heading"> <span> About</span> Us</h1>
+        <p class="heading"> <span> About</span> Us</p>
         <div class="row">
             <div class="image-container">
                 <img src="/assets/shoes.jpg" alt="about image">
@@ -239,7 +238,7 @@
 
 
     <section class="contact section" id="contact">
-        <h1 class="heading"><span>contact</span>Us</h1>
+        <p class="heading"><span>contact</span>Us</p>
         <div class="row">
             <form action="">
                 <input type="text" placeholder="name" class="box">
