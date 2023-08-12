@@ -31,7 +31,8 @@ Route::get('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add
 Route::delete('/delete-cart-product', [CartController::class, 'deleteProduct'])->name('delete.cart.product');
 Route::patch('/update-cart-product', [CartController::class, 'updateProduct'])->name('update.cart');
 
-Route::post('/customer-detail', [CustomerDetailController::class, 'store'])->name('customer.store');
+Route::get('/customer-detail-create', [CustomerDetailController::class, 'create'])->name('customer.create');
+Route::post('/customer-detail-store', [CustomerDetailController::class, 'store'])->name('customer.store');
 
 //application routes for authorized users
 

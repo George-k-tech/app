@@ -20,7 +20,7 @@ class CustomerDetailController extends Controller
      */
     public function create()
     {
-        //
+        return view('customerInfo.create');
     }
 
     /**

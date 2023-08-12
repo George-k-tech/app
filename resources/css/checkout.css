@@ -1,0 +1,185 @@
+/* order css starts here */
+.order-detail {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(226, 224, 224, 0.952);
+    padding: 20px;
+}
+
+.order-detail-left {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding:20px;
+    border-radius: 10px;
+}
+
+.order-detail-right {
+    width: 23%;
+    background-color: white;
+    padding: 20px;
+    height: 34%;
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.order-detail-right h2{
+    text-align: center;
+    font-size: 16px;
+}
+.order-detail-right p{
+    margin: 4% 0;
+}
+
+.order-detail-total{
+    display: flex;
+    justify-content: space-between;
+}
+.order-item-fee{
+    display: flex;
+    justify-content: space-between;
+}
+.order-detail-sum{
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirm-order-btn{
+    height: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.confirm-order-btn {
+margin-top: 20px;
+width: 100%;
+height: 40px;
+border-radius: 10px;
+background-color: orange;
+}
+
+.order-customer-detail {
+    /* width: 100%; */
+    height: 40%;
+    margin: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    padding: 20px;
+    border-radius: 8px;
+}
+.order-customer-detail h2{
+    text-align: center;
+    font-size: 16px;
+}
+.order-customer-name{
+    font-size: 14px;
+}
+.order-customer-phone{
+    display: flex;
+   margin-top: 10px;
+}
+.order-customer-btn{
+    font-size: 14px;
+    padding: 10px 20px;
+    background-color: orange;
+    margin: 10px;
+    border-radius: 5px;
+}
+.order-customer-phone p{
+    padding: 5px 10px;
+}
+.order-customer-update{
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.order-delivery-detail {
+    /* width: 100%; */
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.order-delivery-detail h2 {
+    text-align: center;
+    font-size: 16px;
+}
+
+.order-hr {
+    height: 1px;
+    background-color: rgb(196, 196, 196);
+}
+
+.order-delivery-container {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.order-delivery-item {
+    flex: 1 1 35rem;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    border: 1px solid rgb(204, 203, 203);
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-item {
+    display: flex;
+}
+
+.order-item-image {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*  overflow: hidden; */
+}
+
+.order-item-image img {
+    object-fit: contain;
+    height: 100px;
+}
+
+.order-quantity-desc {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.order-item-price {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-modify {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+.modify-btn{
+    font-size: 14px;
+    padding: 10px 20px;
+    background-color: orange;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+
+/* order css ends here */
