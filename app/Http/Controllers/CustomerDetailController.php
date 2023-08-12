@@ -12,9 +12,9 @@ class CustomerDetailController extends Controller
      */
     public function index()
     {
-        $info = CustomerDetail::all();
+        $customer = CustomerDetail::all();
 
-        return view('customerInfo.index', compact('info'));
+        return view('customerInfo.index', compact('customer'));
     }
 
     /**
@@ -30,8 +30,7 @@ class CustomerDetailController extends Controller
      */
     public function store(Request $request)
     {
-        $detail = CustomerDetail::create([
-            'customer_id'=>Auth()->user()->id,
+         CustomerDetail::create([
             'name'=>Auth()->user()->name,
             'phone' => $request->phone,
             'region'=>$request->region,
@@ -53,17 +52,33 @@ class CustomerDetailController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(int $customer)
     {
-        //
+        $customer = CustomerDetail::findOrFail($customer);
+        return view('customerInfo.edit', compact('customer'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request,$customer_id)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'phone'=>'required',
+            'region'=>'required',
+            'area'=>'required',
+            'additionalInfo'=>'required',
+        ]);
+
+        $customer = CustomerDetail::find($customer_id);
+        $customer->name = $request->name;
+        $customer->phone = $request->phone;
+        $customer->region = $request->region;
+        $customer->area = $request->area;
+        $customer->additionalInfo = $request->additionalInfo;
+        $customer->update();
+        return redirect()->route('customer.index')->with('message', 'Information Succefully updated');
     }
 
     /**

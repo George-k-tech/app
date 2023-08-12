@@ -1,7 +1,9 @@
 @extends('checkoutLayout.index')
 
 @section('content')
+
 <div>
+    <p>Create Address</p>
     <form action="{{ route('customer.store') }}" method="POST">
         @csrf
         <div class="order-customer-name">

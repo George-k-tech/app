@@ -34,6 +34,8 @@ Route::patch('/update-cart-product', [CartController::class, 'updateProduct'])->
 Route::get('/customer-detail-create', [CustomerDetailController::class, 'create'])->name('customer.create');
 Route::post('/customer-detail-store', [CustomerDetailController::class, 'store'])->name('customer.store');
 Route::get('/customer-detail-index', [CustomerDetailController::class, 'index'])->name('customer.index');
+Route::get('/customer-detail-edit/{customer}/edit', [CustomerDetailController::class, 'edit'])->name('customer.edit');
+Route::put('/customer-detail-update/{customer_id}', [CustomerDetailController::class, 'update'])->name('customer.update');
 
 //application routes for authorized users
 

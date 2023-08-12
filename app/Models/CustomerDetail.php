@@ -12,7 +12,6 @@ class CustomerDetail extends Model
     protected $table = 'customer_details';
 
     protected $fillable = [
-        'customer_id',
         'name',
         'phone',
         'region',
