@@ -12,7 +12,9 @@ class CustomerDetailController extends Controller
      */
     public function index()
     {
-        //
+        $info = CustomerDetail::all();
+
+        return view('customerInfo.index', compact('info'));
     }
 
     /**
@@ -30,13 +32,14 @@ class CustomerDetailController extends Controller
     {
         $detail = CustomerDetail::create([
             'customer_id'=>Auth()->user()->id,
+            'name'=>Auth()->user()->name,
             'phone' => $request->phone,
             'region'=>$request->region,
             'area'=>$request->area,
             'additionalInfo'=>$request->additionalInfo,
         ]);
 
-        return redirect()->back();
+        return redirect()->route('customer.index');
     }
 
     /**

@@ -13,6 +13,7 @@ class CustomerDetail extends Model
 
     protected $fillable = [
         'customer_id',
+        'name',
         'phone',
         'region',
         'area',

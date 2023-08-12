@@ -8,7 +8,7 @@
     <div class="order-detail-left">
         <div class="order-customer-detail">
             <h2>customer details</h2>
-            <p><a  href="{{route('customer.create')}}">Change <i class="las la-angle-right"></i></a></p>
+            <p><a  href="{{route('customer.index')}}">Change <i class="las la-angle-right"></i></a></p>
             <div class="order-hr">
             </div>
 
