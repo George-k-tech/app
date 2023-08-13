@@ -683,10 +683,16 @@ tr td:last-child {
     padding: 20px;
 }
 
-/* orders page css starts here */
+/* orders page css ends here */
 
-/* product create page */
 
+/* order details css starts here */
+
+.order-detail{
+    margin-top: 70px;
+}
+
+/* order details css ends here */
 @media only screen and(max-width: 1200px) {
     .sidebar {
         width: 70px;

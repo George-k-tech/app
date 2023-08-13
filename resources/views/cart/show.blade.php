@@ -8,18 +8,12 @@
     <div class="order-detail-left">
         <div class="order-customer-detail">
             <h2>Customer Details</h2>
-            <p><a  href="{{route('customer.index')}}">Change <i class="las la-angle-right"></i></a></p>
+            <p><a  href="{{url('customer-detail-index/' .$user_id )}}">Change <i class="las la-angle-right"></i></a></p>
             <div class="order-hr">
             </div>
 
             <div class="order-customer-desc">
-              @foreach($info as $item)
-                <p>{{$item->name}}</p>
-                <p>{{$item->phone}}</p>
-                <p>{{$item->region}}</p>
-                <p>{{$item->area}}</p>
-                <p>{{$item->additionalInfo}}</p>
-              @endforeach
+             
             </div>
 
         </div>

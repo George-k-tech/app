@@ -6,14 +6,12 @@
     <p>Your Address</p>
     <a href="{{route('customer.create')}}"><i class="las la-plus"></i> Add Address</a>
     <div>
-        @foreach ($customer as $item)
-        <a href="{{url('customer-detail-edit/' .$item->id . '/edit')}}"><i class="las la-pen"></i> Edit</a>
-        <p>{{$item->name}}</p>
-        <p>{{$item->phone}}</p>
-        <p>{{$item->region}}</p>
-        <p>{{$item->Area}}</p>
-        <p>{{$item->additionalInfo}}</p>
-        @endforeach
+        <a href="{{url('customer-detail-edit/' .$customer->id . '/edit')}}"><i class="las la-pen"></i> Edit</a>
+        <p>{{$customer->name}}</p>
+        <p>{{$customer->phone}}</p>
+        <p>{{$customer->region}}</p>
+        <p>{{$customer->Area}}</p>
+        <p>{{$customer->additionalInfo}}</p>
     </div>
 
     <p><a href="{{route('cart.show')}}">Save</a></p>
