@@ -18,5 +18,6 @@
     @include('checkoutLayout.checkoutNav')
 
     @yield('content')
+
 </body>
 </html>

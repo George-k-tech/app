@@ -1,3 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* navbar checkout starts here */
+.checkout-nav {
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+}
+
+.checkout-logo {
+    text-decoration: none;
+    font-size: 26px;
+    color: grey;
+    font-weight: 600;
+}
+
+.checkout-icons {
+
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    align-items: center;
+}
+
+/* navbar checkout ends here */
+
 /* order css starts here */
 .order-detail {
     margin-top: 5rem;
@@ -14,7 +53,7 @@
     display: flex;
     flex-direction: column;
     background-color: white;
-    padding:20px;
+    padding: 20px;
     border-radius: 10px;
 }
 
@@ -27,39 +66,47 @@
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
-.order-detail-right h2{
+.order-detail-right h2 {
     text-align: center;
     font-size: 16px;
 }
-.order-detail-right p{
+
+.order-detail-right p {
     margin: 4% 0;
 }
 
-.order-detail-total{
-    display: flex;
-    justify-content: space-between;
-}
-.order-item-fee{
-    display: flex;
-    justify-content: space-between;
-}
-.order-detail-sum{
+.order-detail-total {
     display: flex;
     justify-content: space-between;
 }
 
-.confirm-order-btn{
+.order-item-fee {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-detail-sum {
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirm-order-btn {
     height: 6%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .confirm-order-btn {
-margin-top: 20px;
-width: 100%;
-height: 40px;
-border-radius: 10px;
-background-color: orange;
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: orange;
+}
+
+.confirm-order-btn a {
+    text-decoration: none;
 }
 
 .order-customer-detail {
@@ -70,28 +117,34 @@ background-color: orange;
     padding: 20px;
     border-radius: 8px;
 }
-.order-customer-detail h2{
-    text-align: center;
+
+.order-customer-detail h2 {
     font-size: 16px;
 }
-.order-customer-name{
+
+.order-customer-name {
     font-size: 14px;
 }
-.order-customer-phone{
+
+.order-customer-phone {
     display: flex;
-   margin-top: 10px;
+    margin-top: 10px;
 }
-.order-customer-btn{
+
+.order-customer-btn {
     font-size: 14px;
     padding: 10px 20px;
     background-color: orange;
     margin: 10px;
     border-radius: 5px;
+    border: none;
 }
-.order-customer-phone p{
+
+.order-customer-phone p {
     padding: 5px 10px;
 }
-.order-customer-update{
+
+.order-customer-update {
     padding-top: 15px;
     display: flex;
     align-items: center;
@@ -143,11 +196,12 @@ background-color: orange;
     display: flex;
     justify-content: center;
     align-items: center;
-    /*  overflow: hidden; */
+    overflow: hidden;
 }
 
 .order-item-image img {
-    object-fit: contain;
+    object-fit: cover;
+    width: 100px;
     height: 100px;
 }
 
@@ -173,7 +227,8 @@ background-color: orange;
     align-items: center;
     height: 50px;
 }
-.modify-btn{
+
+.modify-btn {
     font-size: 14px;
     padding: 10px 20px;
     background-color: orange;
@@ -181,5 +236,130 @@ background-color: orange;
     border-radius: 5px;
 }
 
+.modify-btn a {
+    text-decoration: none;
+}
+
+.customer-detail-head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.order-customer-desc p {
+    margin: 10px;
+}
+
+.order-customer-desc p span {
+    font-weight: bold;
+}
 
 /* order css ends here */
+
+/* customer detail info */
+.customer-info-index {
+    margin-top: 50px;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+}
+
+.customer-info-body {
+    height: 300px;
+    width: 70%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.customer-info-address {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    padding: 10px;
+    align-items: center;
+
+}
+
+.customer-detail-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+.customer-detail-detail span {
+    font-weight: bold;
+
+}
+
+.customer-info-p {
+    text-align: center;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.customer-info-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.customer-info-btn-a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+}
+
+.customer-info-btn-a a {
+    padding: 10px 40px;
+    background-color: orange;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+/* customer detail info */
+
+/* customer create page css */
+.info-create {
+    margin-top: 50px;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
+
+}
+
+.info-create-body {
+
+    width: 450px;
+    height: 520px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.info-create-body p {
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.label {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+.label input{
+    height: 50px;
+}
+.label textarea{
+    height: 70px;
+}
+
+/* customer create page css */

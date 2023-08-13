@@ -77,7 +77,10 @@ class CartController extends Controller
     public function showProduct(){
 
        $user_id = auth()->id();
-        return view('cart.show', compact('user_id'));
+
+       $info = CustomerDetail::where('customer_id', $user_id)->first();
+
+        return view('cart.show', compact('user_id', 'info'));
     }
     
 }
