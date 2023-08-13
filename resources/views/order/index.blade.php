@@ -15,7 +15,7 @@
                 </div>
 
                 <div>
-                    <p>User_Id</p>
+                    <p>User Id</p>
                 </div>
 
                 <div>
@@ -60,7 +60,7 @@
                     </div>
 
                     <div>
-                        <p>View Details</p>
+                        <p><a href="{{route('order.view')}}">View Details</a></p>
                     </div>
                 @endforeach
 

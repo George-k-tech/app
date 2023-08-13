@@ -70,6 +70,7 @@ Route::middleware('auth', 'role:admin')->group(function(){
     Route::get('/category/{category_id}/delete', [CategoryController::class, 'destroy'])->name('category.delete');
 
     Route::get('/order', [OrdersController::class, 'index'])->name('order.index');
+    Route::get('/order/view', [OrdersController::class, 'detail'])->name('order.view');
 });
 
 

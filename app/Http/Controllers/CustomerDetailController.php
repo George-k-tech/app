@@ -31,6 +31,7 @@ class CustomerDetailController extends Controller
     public function store(Request $request)
     {
          CustomerDetail::create([
+            'customer_id' =>Auth()->user()->id,
             'name'=>Auth()->user()->name,
             'phone' => $request->phone,
             'region'=>$request->region,
