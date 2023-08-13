@@ -10,9 +10,9 @@ class CustomerDetailController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(int $customer)
     {
-        $customer = CustomerDetail::all();
+        $customer = CustomerDetail::where('customer_id', $customer)->first();
 
         return view('customerInfo.index', compact('customer'));
     }
@@ -31,6 +31,7 @@ class CustomerDetailController extends Controller
     public function store(Request $request)
     {
          CustomerDetail::create([
+            'customer_id' =>Auth()->user()->id,
             'name'=>Auth()->user()->name,
             'phone' => $request->phone,
             'region'=>$request->region,
@@ -38,7 +39,7 @@ class CustomerDetailController extends Controller
             'additionalInfo'=>$request->additionalInfo,
         ]);
 
-        return redirect()->route('customer.index');
+        return redirect()->route('cart.show');
     }
 
     /**
@@ -55,6 +56,7 @@ class CustomerDetailController extends Controller
     public function edit(int $customer)
     {
         $customer = CustomerDetail::findOrFail($customer);
+        
         return view('customerInfo.edit', compact('customer'));
     }
 
@@ -78,7 +80,7 @@ class CustomerDetailController extends Controller
         $customer->area = $request->area;
         $customer->additionalInfo = $request->additionalInfo;
         $customer->update();
-        return redirect()->route('customer.index')->with('message', 'Information Succefully updated');
+        return redirect()->route('cart.show')->with('message', 'Information Succefully updated');
     }
 
     /**

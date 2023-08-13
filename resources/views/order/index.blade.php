@@ -15,7 +15,7 @@
                 </div>
 
                 <div>
-                    <p>User_Id</p>
+                    <p>User Id</p>
                 </div>
 
                 <div>
@@ -36,9 +36,9 @@
 
             </div>
 
+            @foreach ($orders as $key => $item)
             <div class="admin-order-body-body">
 
-                @foreach ($orders as $key => $item)
                     <div>
                         <p>{{ ++$key }}</p>
                     </div>
@@ -60,11 +60,11 @@
                     </div>
 
                     <div>
-                        <p>View Details</p>
+                        <p><a href="{{url('order/' .$item->user_id)}}">View Details</a></p>
                     </div>
-                @endforeach
 
             </div>
+            @endforeach
 
         </div>
     </div>
