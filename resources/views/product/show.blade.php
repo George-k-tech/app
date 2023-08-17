@@ -61,20 +61,23 @@
         </div>
     </section>
     
+
     <section class="products section" id="products">
         <h1 class="heading"><span>Similar Products</span></h1>
         <div class="box-container">
-            @foreach ($category->products as $product)
+            @foreach ($relatedp as $item)
                 <div class="box">
                     <span class="discount">-10%</span>
                     <div class="image">
-                        <a href="{{ url('/shop/' . $category->slug . '/' . $product->slug) }}"><img src={{ $product->image }}
+                       
+                        <a href="{{ url('/shop/' . $category->slug . '/' . $product->slug) }}"><img src={{ $item->image }}
                                 alt="this product"></a>
+                               
                     </div>
                     <div class="content">
-                        <h3>{{ $product->name }}</h3>
-                        <div class="price"> ${{ $product->price }} <span>$the price was</span></div>
-                        <p class="content-desc">{{ $product->description }}</p> 
+                        <h3>{{ $item->name }}</h3>
+                        <div class="price"> ${{ $item->price }} <span>$the price was</span></div>
+                        <p class="content-desc">{{ $item->description }}</p> 
                     </div>
                     <div class="icons">
                         <a href="#" class="fas fa-heart"></a>

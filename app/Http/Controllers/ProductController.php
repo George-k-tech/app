@@ -71,7 +71,11 @@ class ProductController extends Controller
 
         $product = $category->products()->where('slug', $product_slug)->first();
 
-        return view('product.show', compact('product', 'category'));
+        $category_id = $product->category_id;
+
+        $relatedp = Product::where('category_id', $category_id)->where('slug', '!=', $product_slug)->get();
+
+        return view('product.show', compact('product', 'category', 'relatedp'));
 
     }
 
