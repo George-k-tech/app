@@ -71,7 +71,7 @@ class ProductController extends Controller
 
         $product = $category->products()->where('slug', $product_slug)->first();
 
-        return view('product.show', compact('product'));
+        return view('product.show', compact('product', 'category'));
 
     }
 
