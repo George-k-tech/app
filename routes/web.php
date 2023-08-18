@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerDetailController;
+use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -70,6 +71,10 @@ Route::middleware('auth', 'role:admin')->group(function () {
 
     Route::get('/order', [OrdersController::class, 'index'])->name('order.index');
     Route::get('/order/{customer}', [OrdersController::class, 'detail'])->name('order.view');
+
+    Route::get('/header', [HeaderController::class, 'index'])->name('header.index');
+    Route::get('/header/create', [HeaderController::class, 'create'])->name('header.create');
+    Route::post('/header/store', [HeaderController::class, 'store'])->name('header.store');
 });
 
 

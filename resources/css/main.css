@@ -591,9 +591,38 @@ header .fa-bars {
     font-size: 14px;
 }
 
-
-
 /* products css ends here */
+
+/*single product css starts here */
+.product-detail-head{
+    font-size: 20px;
+}
+.product-detail-body{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.product-detail-key-features{
+    font-size: 14px;
+}
+.key-features{
+    width: 33%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.in-the-box{
+    width: 33%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.specifications{
+    width: 33%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.detail-hr{
+    content: "";
+    height: 1px;
+    background-color: rgba(0, 0, 0, .1);
+}
+/*single product css ends here */
 
 /* contact us css starts here*/
 

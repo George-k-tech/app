@@ -309,7 +309,7 @@ tr td:last-child {
     align-items: center;
 }
 
-.info img {
+.info i {
     border-radius: 50%;
     margin-right: 1rem;
 }
@@ -363,7 +363,7 @@ tr td:last-child {
     font-weight: 500;
 }
 
-.user-info img {
+.user-info i {
     width: 60px;
     border-radius: 50%;
     margin-right: 15px;
@@ -693,6 +693,19 @@ tr td:last-child {
 }
 
 /* order details css ends here */
+
+/*headers page css starts here */
+.page-header{
+     margin-top: 70px;
+}
+
+
+.page-header-create{
+    margin-top: 70px;
+}
+
+/*headers page css ends here */
+
 @media only screen and(max-width: 1200px) {
     .sidebar {
         width: 70px;

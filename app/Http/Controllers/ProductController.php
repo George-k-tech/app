@@ -50,7 +50,7 @@ class ProductController extends Controller
 
         $category->products()->save($product);
 
-      return redirect('product')->with('message', 'producted created succefuly');  
+      return redirect('product')->with('message', 'producted created successfuly');  
 
        /*    $request->validate([
             'name' => 'required',
@@ -71,7 +71,11 @@ class ProductController extends Controller
 
         $product = $category->products()->where('slug', $product_slug)->first();
 
-        return view('product.show', compact('product'));
+        $category_id = $product->category_id;
+
+        $relatedp = Product::where('category_id', $category_id)->where('slug', '!=', $product_slug)->get();
+
+        return view('product.show', compact('product', 'category', 'relatedp'));
 
     }
 

@@ -15,7 +15,6 @@ class AdminController extends Controller
         $categories = Category::all();
         $products = Product::all();
         $orders = Order::all();
-
         return view('admin.dashboard', compact('users', 'categories', 'products', 'orders'));
     }
   
