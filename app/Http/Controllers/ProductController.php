@@ -50,7 +50,7 @@ class ProductController extends Controller
 
         $category->products()->save($product);
 
-      return redirect('product')->with('message', 'producted created succefuly');  
+      return redirect('product')->with('message', 'producted created successfuly');  
 
        /*    $request->validate([
             'name' => 'required',

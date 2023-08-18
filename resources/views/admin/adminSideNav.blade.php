@@ -19,8 +19,8 @@
             <li><a href="{{route('order.index')}}"><span class="las la-shopping-bag"></span>
                     <span>Order</span></a>
             </li>
-            <li><a href=""><span class="las la-receipt"></span>
-                    <span>Inventory</span></a>
+            <li><a href="{{route('header.index')}}"><span class="las la-receipt"></span>
+                    <span>Headers</span></a>
             </li>
             <li><a href=""><span class="las la-user-circle"></span>
                     <span>Accounts</span></a>

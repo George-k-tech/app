@@ -1,11 +1,10 @@
 @extends('admin.index')
 
 @section('content')
-
     <div class="test">
         @if (session('message'))
-        <div>{{ session('message') }}</div>
-    @endif
+            <div>{{ session('message') }}</div>
+        @endif
 
         <div class="admin-product-title">
             <h1>Product page</h1>
@@ -44,7 +43,7 @@
             </div>
 
             <div class="admin-line">
-                
+
             </div>
 
 
@@ -57,7 +56,7 @@
                             <p>{{ $key + 1 }}</p>
                         </div>
                         <div class="div">
-                            <p>{{ $item->category->name }}</p> 
+                            <p>{{ $item->category->name }}</p>
                         </div>
                         <div class="div">
                             <p><img src="{{ $item->image }}" alt="Product Image" style="width:150px"></p>

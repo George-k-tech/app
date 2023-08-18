@@ -693,6 +693,19 @@ tr td:last-child {
 }
 
 /* order details css ends here */
+
+/*headers page css starts here */
+.page-header{
+     margin-top: 70px;
+}
+
+
+.page-header-create{
+    margin-top: 70px;
+}
+
+/*headers page css ends here */
+
 @media only screen and(max-width: 1200px) {
     .sidebar {
         width: 70px;
