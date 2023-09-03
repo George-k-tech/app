@@ -45,7 +45,7 @@
 
             <div class="card-single">
                 <div>
-                    <h1>$124</h1>
+                    <p>$124</p>
                     <span>Income</span>
                 </div>
                 <div>
@@ -86,7 +86,7 @@
                                         <td>{{ $item->user_id }}</td>
                                         <td>{{ $item->price }}</td>
                                         <td>{{ $item->quantity }}</td>
-                                        <td><span class="status pink"></span> passed</td>
+                                        <td><span class="status orange"></span> pending</td>
                                     </tr>
                                 @endforeach
                             </tbody>

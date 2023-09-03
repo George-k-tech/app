@@ -1,6 +1,6 @@
 /*admin layout css starts here */
 :root {
-    --main-color: pink;
+    --main-color: #976ebd;
     --color-dark: #1D2231;
     --text-grey: #8390A2;
 }
@@ -204,9 +204,9 @@
     color: var(--text-grey);
 }
 
-.card-single:last-child {
+/* .card-single:last-child {
     background-color: var(--main-color);
-}
+} */
 
 .card-single:last-child h1,
 .card-single:last-child div:first-child span .card-single:last-child div:last-child span {
