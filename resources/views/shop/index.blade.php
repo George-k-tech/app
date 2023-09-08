@@ -2,109 +2,29 @@
     <div class="new-container">
         <div class="carousel">
             <div class="slider">
-                <section>
-                    <div class="sliders slider1">
-                        <div class="slider-info">
-                            <div class="info-top">
-                                <p>Come shop with us</p>
-                                <p>hurry up and get the best offers now!</p>
-                            </div>
-                            <div class="buttonarea">
-                                <div class="shop-btn">shop</div>
-                            </div>
-                        </div>
-                        <div class="slider-showcase">
-                            <div class="slider-image">
-                                <img src="assets/shoes.jpg" alt="" class="slider-img">
-                            </div>
-
-                        </div>
-
-                    </div>
-                </section>
-                <section>
-                    <div class="sliders slider2">
-                        <div class="slider-info">
-                            <div class="info-top">
-                                <p>Come shop with us</p>
-                                <p>hurry up and get the best offers now!</p>
-                            </div>
-                            <div class="buttonarea">
-                                <div class="shop-btn">shop</div>
-                            </div>
-                        </div>
-                        <div class="slider-showcase">
-                            <div class="slider-image">
-                                <img src="images/gaming_pc.png" alt="" class="slider-img">
-                            </div>
-
-                        </div>
-
-                    </div>
-                </section>
-                <section>
-                    <div class="sliders slider2">
-                        <div class="slider-info">
-                            <div class="info-top">
-                                <p>Come shop with us</p>
-                                <p>hurry up and get the best offers now!</p>
-                            </div>
-                            <div class="buttonarea">
-                                <div class="shop-btn">shop</div>
-                            </div>
-                        </div>
-                        <div class="slider-showcase">
-                            <div class="slider-image">
-                                <img src="images/ASUS_router.png" alt="" height="40px" class="slider-img">
-                            </div>
-
-                        </div>
-
-                    </div>
-                </section>
-                <section>
-                    <div class="sliders slider2">
-                        <div class="slider-info">
-                            <div class="info-top">
-                                <p>Come shop with us</p>
-                                <p>hurry up and get the best offers now!</p>
-                            </div>
-                            <div class="buttonarea">
-                                <div class="shop-btn">shop</div>
-                            </div>
-                        </div>
-
-                        <div class="slider-showcase">
-                            <div class="slider-image">
-                                <img src="images/acer monitor1.png" alt="" class="slider-img">
-                            </div>
-
-                        </div>
-
-                    </div>
-                </section>
-                <section>
-                    <div class="sliders slider2">
-                        <div class="slider-info">
+                @foreach ($headers as $item)
+                    <section>
+                        <div class="sliders slider1">
                             <div class="slider-info">
                                 <div class="info-top">
-                                    <p>Come shop with us</p>
-                                    <p>hurry up and get the best offers now!</p>
+                                    <p>{{$item->title}}</p>
+                                    <p>{{$item->message}}</p>
                                 </div>
                                 <div class="buttonarea">
-                                    <div class="shop-btn">shop</div>
+                                    <div class="shop-btn">{{$item->action}}</div>
+                                </div>
+                            </div>
+                            <div class="slider-showcase">
+                                <div class="slider-image">
+                                    <img src="{{$item->image}}" alt="" class="slider-img">
                                 </div>
 
                             </div>
-                        </div>
-                        <div class="slider-showcase">
-                            <div class="slider-image">
-                                <img src="images/ASUS_laptop.png" alt="" class="slider-img">
-                            </div>
-                        </div>
 
-                    </div>
-                </section>
+                        </div>
+                    </section>
+                @endforeach
+
 
             </div>
             <div class="controls">
@@ -120,11 +40,11 @@
     <section class="categories section">
         <h2>Categories</h2>
         <div>
-                @foreach($categories as $category)
+            @foreach ($categories as $category)
                 <div>
-                   <a href="{{url('/shop/'.$category->slug)}}">{{$category->name}}</a>
+                    <a href="{{ url('/shop/' . $category->slug) }}">{{ $category->name }}</a>
                 </div>
-                @endforeach
+            @endforeach
             <div>
                 <img src="" alt="slider here for categories">
             </div>
@@ -133,28 +53,30 @@
 
 
     <section class="products section" id="products">
-        @foreach($categories as $category)
-        <div class="product-head-title">
-            <p class="product-deals"> Deals on {{$category->name}}</p>
-           <p class="product-deals-btn"><a  href="{{url('/shop/'.$category->slug)}}"> <span class="las la-arrow-right"></span>see all</a></p> 
-        </div>
-       
-        <div class="box-container">
+        @foreach ($categories as $category)
+            <div class="product-head-title">
+                <p class="product-deals"> Deals on {{ $category->name }}</p>
+                <p class="product-deals-btn"><a href="{{ url('/shop/' . $category->slug) }}"> <span
+                            class="las la-arrow-right"></span>see all</a></p>
+            </div>
 
-            @foreach ($category->products as $product)
-                <div class="box">
-                    <span class="discount">-10%</span>
-                    <div class="image">
-                       <a href="{{url('/shop/'.$category->slug.'/'.$product->slug)}}"><img  src={{ $product->image }} alt="this product"></a> 
+            <div class="box-container">
+
+                @foreach ($category->products as $product)
+                    <div class="box">
+                        <span class="discount">-10%</span>
+                        <div class="image">
+                            <a href="{{ url('/shop/' . $category->slug . '/' . $product->slug) }}"><img
+                                    src={{ $product->image }} alt="this product"></a>
+                        </div>
+                        <div class="content">
+                            <h3>{{ $product->name }}</h3>
+                            <div class="price">
+                                ${{ $product->price }} <span>$the price was</span></div>
+                        </div>
                     </div>
-                    <div class="content">
-                        <h3>{{ $product->name }}</h3>
-                        <div class="price">
-                            ${{ $product->price }} <span>$the price was</span></div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
+                @endforeach
+            </div>
         @endforeach
     </section>
 

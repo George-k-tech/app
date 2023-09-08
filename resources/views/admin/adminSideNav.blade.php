@@ -2,8 +2,8 @@
 
 <div class="sidebar">
     <div class="sidebar-brand">
-        <h2><span class="lab la-accusoft"></span> <span>Admin</span></h2>
-    </div>
+        <h2><span class="las la-user-shield"></span> <span>Admin</span></h2>
+    </div>z
 
     <div class="sidebar-menu">
         <ul>
