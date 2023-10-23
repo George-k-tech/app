@@ -16,10 +16,6 @@ Third, you update the composer dependencies
 ```bash
 composer update
 ```
-Install the shopping cart library
-```bash
-composer require hardevine/shoppingcart
-```
  Generate the application key
 ```bash
 php artisan key:generate
